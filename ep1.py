@@ -32,6 +32,8 @@ def carregar_cenarios():
                 "inicio": "Voltar para o saguao de entrada"
             }
         }
+       "Aquario"
+
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
@@ -80,3 +82,5 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
+
+
