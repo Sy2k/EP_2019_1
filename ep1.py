@@ -30,7 +30,16 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+                "inicio": "Voltar para o saguao de entrada",
+                "aquario": {"Estudar": "Você perdeu o horário e não encontrou o professor",
+                            "Conversar com os amigos":{ 
+                                    "Um de seus amigos é um monstro": {"Lutar": #continuar,
+                                        "Fugir": #continuar
+                                            }
+                                    }
+                        }
+               "Computadores": {"Facebook": #continuar 
+                       #continuar                         
             }
         }
        "Aquario"
