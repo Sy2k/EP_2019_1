@@ -43,7 +43,7 @@ def carregar_cenarios():
                        #continuar                         
             }
         }
-        "Refeitõrio":{ "Comer" : "Você percebeu que há algo estranho na comida!"                 }
+        "Refeitório":{ "Comer" : "Você percebeu que há algo estranho na comida!"                 }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
