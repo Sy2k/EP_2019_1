@@ -38,8 +38,8 @@ def carregar_cenarios():
                                     "Estudar": "Você perdeu o horário e não encontrou o professor",
                                     "Conversar com os amigos":{
                                             "Um de seus amigos é um monstro": {
-                                                    "Lutar": "",
-                                                    "Fugir": ""
+                                                    "Lutar": "salvou seus amigos do monstro",
+                                                    "Fugir": "deixou seus amigos para serem devorados"
                                                     }
                                             }
                                     }
@@ -60,7 +60,7 @@ def carregar_cenarios():
                 "descricao":"local duvidoso",
                 "opcoes":{
                         "Comer" : "Você percebeu que há algo estranho na comida!",
-                        "":"
+                        "":""
                         }
                 }
         }
