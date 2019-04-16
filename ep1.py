@@ -60,7 +60,7 @@ def carregar_cenarios():
                 "descricao":"local duvidoso",
                 "opcoes":{
                         "Comer" : "Você percebeu que há algo estranho na comida!",
-                        "":""
+                        "Conversar com outro professor de DesSoft":"informacoes recebidas"
                         }
                 }
         }
