@@ -1,6 +1,7 @@
 # EP 2019-1: Escape Insper
 #Stephanie : stephaniel@al.insper.edu.br
 #Ellen : ellenbs@al.insper.edu.br
+#Ellen - dicionarios 
 def carregar_cenarios():
     cenarios = {
         "inicio": {
