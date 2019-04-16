@@ -26,25 +26,44 @@ def carregar_cenarios():
                          "e devorou sua alma.",
             "opcoes": {}
         },
-        "biblioteca": {
-            "titulo": "Caverna da tranquilidade",
+       "biblioteca": {
+                "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada",
-                "aquario": {"Estudar": "Você perdeu o horário e não encontrou o professor",
-                            "Conversar com os amigos":{ 
-                                    "Um de seus amigos é um monstro": {"Lutar": #continuar,
-                                        "Fugir": #continuar
+                    "inicio": "Voltar para o saguao de entrada",
+                    "aquario": {
+                            "titulo":"Lugar da privacidade",
+                            "descricao":"voce entrou na sala de estudo em grupo",
+                            "opcoes":{
+                                    "Estudar": "Você perdeu o horário e não encontrou o professor",
+                                    "Conversar com os amigos":{
+                                            "Um de seus amigos é um monstro": {
+                                                    "Lutar": "",
+                                                    "Fugir": ""
+                                                    }
                                             }
                                     }
-                        }
-               "Computadores": {"Facebook": #continuar,
-                   "BlackBoard": #continuar
-                       #continuar                         
+                            }
+                    }
+        },
+                                            
+        "Computadores": {
+                "titulo":"Terra da Internet",
+                "descricao":"voce pode navegar na internet",
+                "opcoes"{
+                        "Facebook":"",
+                        "BlackBoard": ""  }
             }
+        },
+        "Refeitório":{
+                "titulo":"Imperio da Comida",
+                "descricao":"local duvidoso",
+                "opcoes":{
+                        "Comer" : "Você percebeu que há algo estranho na comida!",
+                        "":"
+                        }
+                }
         }
-        "Refeitório":{ "Comer" : "Você percebeu que há algo estranho na comida!"                 }
-    }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
