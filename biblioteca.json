@@ -1,0 +1,9 @@
+"aquario": {
+                                    "titulo":"Lugar da privacidade",
+                                    "descricao":"voce entrou na sala de estudo em grupo",
+                                    "opcoes":{
+                                            "Estudar": "Você perdeu o horário e não encontrou o professor",
+                                            "Conversar com os amigos":{
+                                                    "Um de seus amigos é um monstro": {
+                                                            "Lutar": "salvou seus amigos do monstro",
+                                                            "Fugir": "deixou seus amigos para serem devorados"
