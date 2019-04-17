@@ -87,6 +87,8 @@ def main():
         print(cenario_atual["titulo"])
         print ("----------------")
         print(cenario_atual["descricao"])
+        print()
+        print("para se teletransportar, voce deve saber o nome correto de cada sala" )
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
@@ -97,12 +99,21 @@ def main():
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
             escolha = ""
-
+        
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
+                
+        escolha_sala = input("deseja se teletransportar para algum lugar?" )
+        if escolha_sala == "nao":
+                print ("voce continua na mesma sala")
+        elif escolha_sala in cenarios:
+            if escolha_sala != cenario_atual:
+                cenario_atual = escolha_sala 
+        else:
+            print("sala invalida")
 
     print("Você morreu!")
 
