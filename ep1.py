@@ -4,7 +4,7 @@
 #Ellen - dicionarios 
 def carregar_cenarios():
     cenarios = {
-        "inicio": {
+            "inicio": {
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
@@ -12,58 +12,56 @@ def carregar_cenarios():
                 "biblioteca": "Ir para a biblioteca"
             }
         },
-        "andar professor": {
-            "titulo": "Andar do desespero",
-            "descricao": "Voce chegou ao andar da sala do seu professor",
-            "opcoes": {
-                "inicio": "Tomar o elevador para o saguao de entrada",
-                "professor": "Falar com o professor"
+            "andar professor": {
+                    "titulo": "Andar do desespero",
+                    "descricao": "Voce chegou ao andar da sala do seu professor",
+                    "opcoes": {
+                            "inicio": "Tomar o elevador para o saguao de entrada",
+                            "professor": "Falar com o professor"
             }
         },
-        "professor": {
-            "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
-            "opcoes": {}
+            "professor": {
+                    "titulo": "O monstro do Python",
+                    "descricao": "Voce foi pedir para o professor adiar o EP. "
+                    "O professor revelou que é um monstro disfarçado "
+                    "e devorou sua alma.",
+                    "opcoes": {}
         },
-       "biblioteca": {
-                "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
-            "opcoes": {
-                    "inicio": "Voltar para o saguao de entrada",
-                    "aquario": {
-                            "titulo":"Lugar da privacidade",
-                            "descricao":"voce entrou na sala de estudo em grupo",
-                            "opcoes":{
-                                    "Estudar": "Você perdeu o horário e não encontrou o professor",
-                                    "Conversar com os amigos":{
-                                            "Um de seus amigos é um monstro": {
-                                                    "Lutar": "salvou seus amigos do monstro",
-                                                    "Fugir": "deixou seus amigos para serem devorados"
+            "biblioteca": {
+                    "titulo": "Caverna da tranquilidade",
+                    "descricao": "Voce esta na biblioteca",
+                    "opcoes": {
+                            "inicio": "Voltar para o saguao de entrada",
+                            "aquario": {
+                                    "titulo":"Lugar da privacidade",
+                                    "descricao":"voce entrou na sala de estudo em grupo",
+                                    "opcoes":{
+                                            "Estudar": "Você perdeu o horário e não encontrou o professor",
+                                            "Conversar com os amigos":{
+                                                    "Um de seus amigos é um monstro": {
+                                                            "Lutar": "salvou seus amigos do monstro",
+                                                            "Fugir": "deixou seus amigos para serem devorados"
                                                     }
                                             }
                                     }
                             }
                     }
         },
-                                            
-        "Computadores": {
-                "titulo":"Terra da Internet",
-                "descricao":"voce pode navegar na internet",
-                "opcoes"{
-                        "Facebook":"",
-                        "BlackBoard": ""  }
-            }
-        },
-        "Refeitório":{
-                "titulo":"Imperio da Comida",
-                "descricao":"local duvidoso",
-                "opcoes":{
-                        "Comer" : "Você percebeu que há algo estranho na comida!",
-                        "Conversar com outro professor de DesSoft":"informacoes recebidas"
-                        }
-                }
+            "Computadores": {
+                    "titulo":"Terra da Internet",
+                    "descricao":"voce pode navegar na internet",
+                    "opcoes":{
+                            "Facebook":"",
+                            "BlackBoard": ""  }
+            },
+            "Refeitorio":{
+                    "titulo": "Terra da comilança",
+                    "descricao":"voce pode explorar ou ir embora",
+                    "opcoes":{
+                            "comer" : "a comida esta envenenada",
+                            "voltar":""
+                            }
+                    }
         }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
@@ -86,9 +84,9 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
+        print(cenario_atual["titulo"])
+        print ("----------------")
+        print(cenario_atual["descricao"])
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
