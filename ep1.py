@@ -2,6 +2,9 @@
 #Stephanie : stephaniel@al.insper.edu.br
 #Ellen : ellenbs@al.insper.edu.br
 #Ellen - dicionarios 
+import json
+with open("computadores.json", "r") as read_comp:
+    comp = json.load(read_comp)
 def carregar_cenarios():
     cenarios = {
             "inicio": {
@@ -47,13 +50,7 @@ def carregar_cenarios():
                             }
                     }
         },
-            "Computadores": {
-                    "titulo":"Terra da Internet",
-                    "descricao":"voce pode navegar na internet",
-                    "opcoes":{
-                            "Facebook":"",
-                            "BlackBoard": ""  }
-            },
+            "Computadores":{comp},
             "Refeitorio":{
                     "titulo": "Terra da comilança",
                     "descricao":"voce pode explorar ou ir embora",
