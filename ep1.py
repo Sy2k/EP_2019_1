@@ -1,7 +1,9 @@
 # EP 2019-1: Escape Insper
 #Stephanie : stephaniel@al.insper.edu.br
-#Ellen : ellenbs@al.insper.edu.br
-#Ellen - dicionarios 
+#Ellen : ellenbs@al.insper.edu.br 
+import time
+import colorama
+from colorama import Fore, Back, Style, init
 def carregar_cenarios():
     cenarios = {
             "inicio": {
@@ -68,7 +70,7 @@ def carregar_cenarios():
 
 
 def main():
-    print("Na hora do sufoco!")
+    print(Fore.YELLOW + "Na hora do sufoco!")
     print("------------------")
     print()
     print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
