@@ -1,9 +1,7 @@
 [
-{"nome":"Monstro","HitPoint":150,"HP":200,"defesa":110,},
-{"nome":"monstro2","HitPoint":160,"HP":200,"defesa":100,},
-{"nome":"monstro3","HitPoint":80,"HP":60,"defesa":50,},
-{"nome":"monstro4","HitPoint":90,"HP":50,"defesa":70,},
+{"nome":"Monstro1","HitPoint":150,"HP":200,"defesa":110},
+{"nome":"monstro2","HitPoint":160,"HP":200,"defesa":100},
+{"nome":"monstro3","HitPoint":80,"HP":60,"defesa":50},
+{"nome":"monstro4","HitPoint":90,"HP":50,"defesa":70},
 {"nome":"monstro5","HitPoint":40,"HP":40,"defesa":30},
-{"nome":"monstro6","HitPoint":40,"HP":40,"defesa":30},
-
-]
+{"nome":"monstro6","HitPoint":40,"HP":40,"defesa":30}]

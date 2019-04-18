@@ -19,17 +19,8 @@ def carregar_cenarios():
 
 def inventario():
     todos_itens = lista
-    #while z in opcao_item:
-    inventario_slots = [0]*2
+    inventario_slots = []*2
     return todos_itens, inventario_slots
-#        for i in inv:
-#            x = i.split()  # Separa.
-#            h="".join(z)  # Junta tudo de novo com um espaco.
-#        if not h in inv:
-#            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
-#            return inv
-            #TEM o inventario tem dois espacoes no comeco
-            # ai dps da mochila aumentar x numeros
 
 def main():
     init(autoreset=True)
@@ -67,7 +58,7 @@ def main():
             print(Fore.CYAN + "Voce tem as seguintes opcoes:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
-            print(Back.CYAN + "SEU INVENTARIO: {0}".format(inventario_atual))
+            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario_atual))
             escolhas = cenarios[nome_cenario_atual]['opcoes']
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
@@ -88,7 +79,9 @@ def main():
                 if escolha in opcoes:
                     nome_cenario_atual = escolha
                     if escolha == "item":
-                        inventario_atual[1]= opcoes[escolha]
+                        item_achado = opcoes[escolha]
+                        if not item_achado in inventario_atual:
+                            inventario_atual.append(item_achado)
                 else:
                     print("Sua indecisão foi sua ruína!")
                     game_over = True
