@@ -36,7 +36,7 @@ def carregar_cenarios():
                                     "titulo":"Lugar da privacidade",
                                     "descricao":"voce entrou na sala de estudo em grupo",
                                     "opcoes":{
-                                            "Estudar": "Você perdeu o horário e não encontrou o professor",
+                                            "Estudar": "Voce perdeu o horário e não encontrou o professor",
                                             "Conversar com os amigos":{
                                                     "Um de seus amigos é um monstro": {
                                                             "Lutar": "salvou seus amigos do monstro",
@@ -74,7 +74,7 @@ def main():
     print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
         "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...")
     print()
-    print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
+    print("É o dia de entregar o EP e você está muuuuito atrasado! Voce está "
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)")
     print()
@@ -99,7 +99,7 @@ def main():
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
             escolha = ""
-        
+            
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
@@ -115,7 +115,7 @@ def main():
         else:
             print("sala invalida")
 
-    print("Você morreu!")
+    print("Voce morreu!")
 
 
 # Programa principal.
