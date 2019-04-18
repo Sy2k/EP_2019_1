@@ -1,4 +1,4 @@
-def Aparecimento_de_Mons(info):
+def aparecer_monstros(info):
 	lista_Mons = []
 	for e in info:
 		for x in e.keys():

@@ -3,6 +3,9 @@
 #Ellen : ellenbs@al.insper.edu.br
 #Ellen - dicionarios 
 import json
+import time
+import colorama
+from colorama import Fore, Back, Style, init
 with open("computadores.json", "r") as read_comp:
     comp = json.load(read_comp)
 def carregar_cenarios():
@@ -65,7 +68,7 @@ def carregar_cenarios():
 
 
 def main():
-    print("Na hora do sufoco!")
+    print(Fore.YELLOW + "Na hora do sufoco!")
     print("------------------")
     print()
     print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
