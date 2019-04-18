@@ -31,7 +31,7 @@ def carregar_cenarios():
                     "opcoes": {}
         },
             "biblioteca": {
-                    "titulo": "Caverna da tranquilidade",
+                    "titulo": "CAVERNA DA TRANQUILIDADE",
                     "descricao": "Voce esta na biblioteca",
                     "opcoes": {
                             "inicio": "Voltar para o saguao de entrada",
@@ -40,30 +40,42 @@ def carregar_cenarios():
             "aquario": {
                 "titulo":"Lugar da privacidade",
                 "descricao":"voce entrou na sala de estudo em grupo",
-                "opcoes":{
-                    "estudar": "abra os livros e estude",
-                    "Conversar com os amigos": "passe tempo de qualidade com eles"}
-            
+                "opcoes":{"biblioteca": "volte para biblioteca",
+                    "conversar com os amigos": "passe tempo de qualidade com eles"
+                                    }
+        },
+            "conversar com os amigos":{
+                "titulo" : "CILADA",
+                "descricao" : "um de seus amigos se mostrou um monstro",
+                "opcoes" : {
+                    "lutar":"batalhar contra o mosntro",
+                    "fugir":"deixe seus amigos serem devorados"
+                }
+        },
+            "fugir":{
+                "titulo": "COVARDE",
+                "descricao" : "merece morrer",
+                "opcoes" : {}
+
         },  
             "Refeitorio":{
                 "titulo": "TERRA DA COMELANCIA",
-                "descricao":"Ao olhar ao redor vc viu o Professor De DesSoft da turma A, e que o clima daquele local estava estranho"
+                "descricao":"Ao olhar ao redor vc viu o Professor De DesSoft da turma A, e que o clima daquele local estava estranho",
                 "opcoes":{
                     "professor da turma A": "conversar com o mesmo",
-                    "Voltar": "Sair do Refeitorio"
+                    "voltar": "Sair do Refeitorio"
             }
 
 
         },
             "banheiro":{
                 "titulo":" ",
-                "descricao":"O local onde muitas coisas acontecem"
+                "descricao":"O local onde muitas coisas acontecem",
                 "opcoes":{
-                    "entrar":'lavar a mao ou fazer suas necessidade'
-                    "Continuar sua vida": "Apenas ignorara o banheiro visto"}
+                    "entrar":'lavar a mao ou fazer suas necessidade',
+                    "continuar sua vida": "Apenas ignorara o banheiro visto"}
             }
         }
-
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
@@ -106,12 +118,19 @@ def main():
             print(Fore.CYAN + "O que deseja fazer?")
             choose = input("")
             print()
+            while not choose in escolhas:
+                    print("opcao inválida!!")
+                    print()
+                    print(Fore.CYAN + "Voce tem as seguintes opcoes:") 
+                    for opcao,val in opcoes.items():
+                        print(opcao,":",val)
+                    print(Fore.CYAN + "O que deseja fazer?")
+                    choose = input("")
+                    print()
             if choose in escolhas:
                 escolha = choose
                 if escolha in opcoes:
                     nome_cenario_atual = escolha
-                elif escolha == "estudar":
-                    game_over = True
                 else:
                     print("Sua indecisão foi sua ruína!")
                     game_over = True
