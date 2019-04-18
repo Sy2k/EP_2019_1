@@ -24,7 +24,7 @@ def carregar_cenarios():
             }
         },
             "professor": {
-                    "titulo": "O MOSNTRO DO PYTHON",
+                    "titulo": "O MONSTRO DO PYTHON",
                     "descricao": "Voce foi pedir para o professor adiar o EP. "
                     "O professor revelou que é um monstro disfarçado "
                     "e devorou sua alma.",

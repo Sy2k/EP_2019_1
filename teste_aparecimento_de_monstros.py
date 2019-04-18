@@ -1,3 +1,5 @@
+ #----------------------------------------Teste-----------------------------------------
+
 def aparecer_monstros(info):
 	lista_Mons = []
 	for e in info:
@@ -8,8 +10,7 @@ def aparecer_monstros(info):
 	print(lista_Mons[key])
 	return lista_Mons[key]
 print (Aparecimento_de_Mons(info))
-def batalha_2(dados):  
- #----------------------------------------Teste-----------------------------------------
+def batalha(dados):  
 	n=0
 	list_0 = []
 	list_0.append(Aparecimento_de_Mons(dados))
