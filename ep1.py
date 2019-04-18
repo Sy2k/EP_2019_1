@@ -42,11 +42,28 @@ def carregar_cenarios():
                 "descricao":"voce entrou na sala de estudo em grupo",
                 "opcoes":{
                     "estudar": "abra os livros e estude",
-                    "Conversar com os amigos": "passe tempo de qualidade com eles"
-                                    }
+                    "Conversar com os amigos": "passe tempo de qualidade com eles"}
+            
+        },  
+            "Refeitorio":{
+                "titulo": "TERRA DA COMELANCIA",
+                "descricao":"Ao olhar ao redor vc viu o Professor De DesSoft da turma A, e que o clima daquele local estava estranho"
+                "opcoes":{
+                    "professor da turma A": "conversar com o mesmo",
+                    "Voltar": "Sair do Refeitorio"
+            }
+
+
         },
-            "estudar" : "perdeu o horaio e nao conseguiu adiar a EP"
-        }  
+            "banheiro":{
+                "titulo":" ",
+                "descricao":"O local onde muitas coisas acontecem"
+                "opcoes":{
+                    "entrar":'lavar a mao ou fazer suas necessidade'
+                    "Continuar sua vida": "Apenas ignorara o banheiro visto"}
+            }
+        }
+
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 

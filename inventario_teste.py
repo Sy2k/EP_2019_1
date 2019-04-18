@@ -1,17 +1,19 @@
 #lista_itens = [{'Caixas':},{"Chaves": },{"Balde de tinta": },{"Estilingue": },{"Frigideira": },{"Colher": } ,{"Faca": },{"Água fervente": },{"Pimenta": },{"Casca de Banana":"poder fugir"}]
 def inventario_tentativa_2(inventario__2):
-    inventario_2 = []
-    for i in inventario__2:
-        x = i.split()  # Separa.
-        h="".join(z)  # Junta tudo de novo com um espaco.
-    if not h in inventario_2:
-        inventario__2.append(h)  # Adiciona elementos que nao estao presentes na lista
-        return inventario_2
-        
+    while z in opcao_item:
+        z = input("Qual item deseja pegar")
+        inventario_2 = []
+        for i in inventario__2:
+            x = i.split()  # Separa.
+            h="".join(z)  # Junta tudo de novo com um espaco.
+        if not h in inventario_2:
+            inventario__2.append(h)  # Adiciona elementos que nao estao presentes na lista
+            return inventario_2
+
+"""
 def fazer_inventario():
 	if len(inventario) == 0:
-        print('Inventario: Não tem nada')
-        return
+    return 'Inventario: Não tem nada'
     conta_item = {}
     for item in inventario:
         if item in conta_item.keis():
@@ -27,3 +29,4 @@ def fazer_inventario():
             print('  ' + item)
 faz_inv = fazer_inventario
 return faz_inv
+"""

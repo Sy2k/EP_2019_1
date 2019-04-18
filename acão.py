@@ -1,7 +1,9 @@
+#RASCUNHO DAS ESCOLHAS !!!!!!!!!!
 import ep1
 import time
 import colorama
 from colorama import Fore, Back, Style, init
+#-------------------------------------------TESTE !---------------------------------------------
 def escolher_caminho():
  	caminho = " "
  	while caminho != "biblioteca" or caminho !="aquario" or caminho!= "refeitorio" or caminho!= "banheiro" or caminho!="andar do professor" or caminho!="Computadores": #Validação 
@@ -30,7 +32,7 @@ def acao (escolher_caminho):
 				a = int(input("O que deseja fazer(escolher um caminho(digite 1); pegar algum item(digite 2); falar com a bibliotecaria (digite 3) "))
 			if a == 1:
 				cenario = " "
-	 			while cenario != "biblioteca" or cenario!="aquario" or cenario!= "refeitorio" or cenario!= "banheiro" or cenario!="orar do professor" or cenario!="Computadores": #Validação 
+	 			while cenario != "biblioteca" or cenario!="aquario" or cenario!= "refeitorio" or cenario!= "banheiro" or cenario!="andar do professor" or cenario!="Computadores": #Validação 
 	 				cenario = input(Fore.BLUE + "Qual caminho você irá escolher(Sair da biblioteca(digite1); Ir para os aquarios(Digite2); Mexer nos computadores(Digite3)? ")
 	 				return cenario 
 			elif a == 2:
