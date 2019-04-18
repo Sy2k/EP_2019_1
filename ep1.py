@@ -72,13 +72,32 @@ def carregar_cenarios():
                 "titulo":" ",
                 "descricao":"O local onde muitas coisas acontecem",
                 "opcoes":{
-                    "entrar":'lavar a mao ou fazer suas necessidade',
-                    "continuar sua vida": "Apenas ignorara o banheiro visto"}
+            }
+        },
+            "Raposa selvagem"{
+                "titulo": "O MASCOTE DO INSPER DESCONTROLADO",
+                "descricao": "O mascote do Insper ficou descontrolado",
+                "opcoes":{
+
+            }
+
             }
         }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
+def inventario(inv):
+    z = input("Qual item deseja pegar")
+    while z in opcao_item:
+        inventario_slots = []
+        for i in inv:
+            x = i.split()  # Separa.
+            h="".join(z)  # Junta tudo de novo com um espaco.
+        if not h in inv:
+            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
+            return inv
+            #TEM o inventario tem dois espacoes no comeco
+            # ai dps da mochila aumentar x numeros
 
 def main():
     init(autoreset=True)
@@ -88,6 +107,7 @@ def main():
     print()
     print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
         "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...")
+    time.sleep(2)
     print()
     print("É o dia de entregar o EP e você está muuuuito atrasado! Voce está "
         "na entrada do Insper, e quer procurar o professor para pedir um "
@@ -119,7 +139,8 @@ def main():
             choose = input("")
             print()
             while not choose in escolhas:
-                    print("opcao inválida!!")
+                    print("Opcao inválida!!")
+                    print("Digite como mostrado, por favor")
                     print()
                     print(Fore.CYAN + "Voce tem as seguintes opcoes:") 
                     for opcao,val in opcoes.items():

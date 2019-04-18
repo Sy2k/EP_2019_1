@@ -1,7 +1,7 @@
 #lista_itens = [{'Caixas':},{"Chaves": },{"Balde de tinta": },{"Estilingue": },{"Frigideira": },{"Colher": } ,{"Faca": },{"Água fervente": },{"Pimenta": },{"Casca de Banana":"poder fugir"}]
 def inventario_tentativa_2(inventario__2):
+    z = input("Qual item deseja pegar")
     while z in opcao_item:
-        z = input("Qual item deseja pegar")
         inventario_2 = []
         for i in inventario__2:
             x = i.split()  # Separa.
@@ -9,6 +9,8 @@ def inventario_tentativa_2(inventario__2):
         if not h in inventario_2:
             inventario__2.append(h)  # Adiciona elementos que nao estao presentes na lista
             return inventario_2
+            #TEM o inventario tem dois espacoes no comeco
+            # ai dps da mochila aumentar x numeros
 
 """
 def fazer_inventario():

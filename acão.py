@@ -3,7 +3,7 @@ import ep1
 import time
 import colorama
 from colorama import Fore, Back, Style, init
-#-------------------------------------------TESTE !---------------------------------------------
+#-------------------------------------------TESTE TESTE TESTE TESTE---------------------------------------------
 def escolher_caminho():
  	caminho = " "
  	while caminho != "biblioteca" or caminho !="aquario" or caminho!= "refeitorio" or caminho!= "banheiro" or caminho!="andar do professor" or caminho!="Computadores": #Validação 
