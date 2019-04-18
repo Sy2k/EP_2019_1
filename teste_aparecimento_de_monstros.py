@@ -1,5 +1,7 @@
  #----------------------------------------Teste-----------------------------------------
-
+import json
+with open("HP_HitPoint_Defense(teste).json","r") as arquivo:
+	dados = json.load(arquivo)
 def aparecer_monstros(info):
 	lista_Mons = []
 	for e in info:
