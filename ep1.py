@@ -1,13 +1,10 @@
 # EP 2019-1: Escape Insper
 #Stephanie : stephaniel@al.insper.edu.br
 #Ellen : ellenbs@al.insper.edu.br
-#Ellen - dicionarios 
-import json
+#Ellen - dicionario
 import time
 import colorama
 from colorama import Fore, Back, Style, init
-with open("computadores.json", "r") as read_comp:
-    comp = json.load(read_comp)
 def carregar_cenarios():
     cenarios = {
             "inicio": {
@@ -53,7 +50,13 @@ def carregar_cenarios():
                             }
                     }
         },
-            "Computadores":{comp},
+            "Computadores":{
+                    "titulo":"Terra da Internet",
+                    "descricao":"voce pode navegar na internet",
+                    "opcoes":{
+                            "Facebook":"voce encontrou dicas de como se deve adiar o ep",
+                            "BlackBoard": "voce encontrou o local com item importante"  }
+            },
             "Refeitorio":{
                     "titulo": "Terra da comilança",
                     "descricao":"voce pode explorar ou ir embora",
