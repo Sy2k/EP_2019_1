@@ -74,7 +74,7 @@ def carregar_cenarios():
                 "opcoes":{
             }
         },
-            "Raposa selvagem"{
+            "Raposa selvagem":{
                 "titulo": "O MASCOTE DO INSPER DESCONTROLADO",
                 "descricao": "O mascote do Insper ficou descontrolado",
                 "opcoes":{
