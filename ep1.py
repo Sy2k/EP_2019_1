@@ -38,7 +38,7 @@ def carregar_cenarios():
                             "aquario": "Entrar em um aquário"}
         },
             "aquario": {
-                "titulo":"Lugar da privacidade",
+                "titulo":"LUGAR DA PRIVACIDADE",
                 "descricao":"voce entrou na sala de estudo em grupo",
                 "opcoes":{"biblioteca": "volte para biblioteca",
                     "conversar com os amigos": "passe tempo de qualidade com eles"
@@ -59,28 +59,31 @@ def carregar_cenarios():
 
         },  
             "Refeitorio":{
-                "titulo": "TERRA DA COMELANCIA",
+                "titulo": "TERRA DA COMILANCIA",
                 "descricao":"Ao olhar ao redor vc viu o Professor De DesSoft da turma A, e que o clima daquele local estava estranho",
                 "opcoes":{
                     "professor da turma A": "conversar com o mesmo",
                     "voltar": "Sair do Refeitorio"
             }
 
+        },
+            "professor da turma A":{
+                "titulo":"ANJO DA INFORMACAO",
+                "descricao" : "Será que a sua ajuda irá leva-lo à ruina?"
 
         },
             "banheiro":{
-                "titulo":" ",
+                "titulo": "CASA DO ESPELHO ",
                 "descricao":"O local onde muitas coisas acontecem",
                 "opcoes":{
             }
         },
             "Raposa selvagem":{
-                "titulo": "O MASCOTE DO INSPER DESCONTROLADO",
+                "titulo": "O MASCOTE",
                 "descricao": "O mascote do Insper ficou descontrolado",
                 "opcoes":{
                     "Lutar": "Batalhar contra o monstro",
                     "Fugir": ""
-
             }
 
             }
@@ -89,7 +92,7 @@ def carregar_cenarios():
     return cenarios, nome_cenario_atual
 
 def inventario(inv):
-    z = input("Qual item deseja pegar")
+    z = input("Qual item deseja pegar? ")
     while z in opcao_item:
         inventario_slots = []
         for i in inv:
