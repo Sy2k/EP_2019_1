@@ -31,7 +31,7 @@ def carregar_cenarios():
                     "opcoes": {}
         },
             "biblioteca": {
-                    "titulo": "Caverna da tranquilidade",
+                    "titulo": "CAVERNA DA TRANQUILIDADE",
                     "descricao": "Voce esta na biblioteca",
                     "opcoes": {
                             "inicio": "Voltar para o saguao de entrada",
@@ -41,11 +41,21 @@ def carregar_cenarios():
                 "titulo":"Lugar da privacidade",
                 "descricao":"voce entrou na sala de estudo em grupo",
                 "opcoes":{
-                    "estudar": "abra os livros e estude",
+                    "biblioteca": "volte para biblioteca",
                     "Conversar com os amigos": "passe tempo de qualidade com eles"
                                     }
         },
-            "estudar" : "perdeu o horaio e nao conseguiu adiar a EP"
+            "Conversar com os amigos":{
+                "titulo" : "um de seus amigos se mostrou um monstro",
+                "opcoes" : {
+                    "lutar":"batalhar contra o mosntro",
+                    "fugir":"deixe seus amigos serem devorados"
+                }
+        },
+            "fugir":{
+                "titulo": "voce e um covarde"
+
+            }
         }  
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
@@ -89,12 +99,16 @@ def main():
             print(Fore.CYAN + "O que deseja fazer?")
             choose = input("")
             print()
+            while not choose in escolhas:
+                    print("opcao inválida!!")
+                    print()
+                    print(Fore.CYAN + "O que deseja fazer?")
+                    choose = input("")
+                    print()
             if choose in escolhas:
                 escolha = choose
                 if escolha in opcoes:
                     nome_cenario_atual = escolha
-                elif escolha == "estudar":
-                    game_over = True
                 else:
                     print("Sua indecisão foi sua ruína!")
                     game_over = True
