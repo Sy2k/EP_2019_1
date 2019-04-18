@@ -8,7 +8,7 @@ from colorama import Fore, Back, Style, init
 def carregar_cenarios():
     cenarios = {
             "inicio": {
-            "titulo": "Saguao do perigo",
+            "titulo": "SAGUAO DO PERIGO",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
@@ -16,7 +16,7 @@ def carregar_cenarios():
             }
         },
             "andar professor": {
-                    "titulo": "Andar do desespero",
+                    "titulo": "ANDAR DO DESESPERO",
                     "descricao": "Voce chegou ao andar da sala do seu professor",
                     "opcoes": {
                             "inicio": "Tomar o elevador para o saguao de entrada",
@@ -24,7 +24,7 @@ def carregar_cenarios():
             }
         },
             "professor": {
-                    "titulo": "O monstro do Python",
+                    "titulo": "O MOSNTRO DO PYTHON",
                     "descricao": "Voce foi pedir para o professor adiar o EP. "
                     "O professor revelou que é um monstro disfarçado "
                     "e devorou sua alma.",
@@ -35,43 +35,26 @@ def carregar_cenarios():
                     "descricao": "Voce esta na biblioteca",
                     "opcoes": {
                             "inicio": "Voltar para o saguao de entrada",
-                            "aquario": {
-                                    "titulo":"Lugar da privacidade",
-                                    "descricao":"voce entrou na sala de estudo em grupo",
-                                    "opcoes":{
-                                            "Estudar": "Voce perdeu o horário e não encontrou o professor",
-                                            "Conversar com os amigos":{
-                                                    "Um de seus amigos é um monstro": {
-                                                            "Lutar": "salvou seus amigos do monstro",
-                                                            "Fugir": "deixou seus amigos para serem devorados"
-                                                    }
-                                            }
-                                    }
-                            }
-                    }
+                            "aquario": "Entrar em um aquário"}
         },
-            "Computadores":{
-                    "titulo":"Terra da Internet",
-                    "descricao":"voce pode navegar na internet",
-                    "opcoes":{
-                            "Facebook":"voce encontrou dicas de como se deve adiar o ep",
-                            "BlackBoard": "voce encontrou o local com item importante"  }
-            },
-            "Refeitorio":{
-                    "titulo": "Terra da comilança",
-                    "descricao":"voce pode explorar ou ir embora",
-                    "opcoes":{
-                            "comer" : "a comida esta envenenada",
-                            "voltar":""
-                            }
-                    }
-        }
+            "aquario": {
+                "titulo":"Lugar da privacidade",
+                "descricao":"voce entrou na sala de estudo em grupo",
+                "opcoes":{
+                    "estudar": "abra os livros e estude",
+                    "Conversar com os amigos": "passe tempo de qualidade com eles"
+                                    }
+        },
+            "estudar" : "perdeu o horaio e nao conseguiu adiar a EP"
+        }  
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
 
 def main():
-    print(Fore.YELLOW + "Na hora do sufoco!")
+    init(autoreset=True)
+    print()
+    print("Na hora do sufoco!")
     print("------------------")
     print()
     print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
@@ -87,38 +70,43 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-        print(cenario_atual["titulo"])
+        print(Back.RED + cenario_atual["titulo"])
         print ("----------------")
-        print(cenario_atual["descricao"])
+        print(Fore.RED + cenario_atual["descricao"])
         print()
-        print("para se teletransportar, voce deve saber o nome correto de cada sala" )
+        #print("para se teletransportar, voce deve saber o nome correto de cada sala" )
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-            print("voce tem as seguintes opcoes:") 
+            print(Fore.CYAN + "Voce tem as seguintes opcoes:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
             escolhas = cenarios[nome_cenario_atual]['opcoes']
             escolha = ""
-            choose = input("O que deseja fazer? ")
-            if escolha in opcoes:
-                nome_cenario_atual = escolha
+            print(Fore.CYAN + "O que deseja fazer?")
+            choose = input("")
+            print()
+            if choose in escolhas:
                 escolha = choose
-            else:
-                print("Sua indecisão foi sua ruína!")
-                game_over = True
+                if escolha in opcoes:
+                    nome_cenario_atual = escolha
+                elif escolha == "estudar":
+                    game_over = True
+                else:
+                    print("Sua indecisão foi sua ruína!")
+                    game_over = True
                 
-        escolha_sala = input("deseja se teletransportar para algum lugar?" )
-        if escolha_sala == "nao":
-                print ("voce continua na mesma sala")
-        elif escolha_sala in cenarios:
-            if escolha_sala != cenario_atual:
-                cenario_atual = escolha_sala 
-        else:
-            print("sala invalida")
+        #escolha_sala = input("deseja se teletransportar para algum lugar?" )
+        #if escolha_sala == "nao":
+                #print ("voce continua na mesma sala")
+        #elif escolha_sala in cenarios:
+            #if escolha_sala != cenario_atual:
+                #cenario_atual = escolha_sala 
+        #else:
+            #print("sala invalida")
 
     print("Voce morreu!")
 
