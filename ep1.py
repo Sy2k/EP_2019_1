@@ -101,12 +101,9 @@ def main():
             escolhas = cenarios[nome_cenario_atual]['opcoes']
             escolha = ""
             choose = input("O que deseja fazer? ")
-            
-
-
             if escolha in opcoes:
                 nome_cenario_atual = escolha
-                escolha = escolher
+                escolha = choose
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
