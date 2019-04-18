@@ -6,24 +6,28 @@ import time
 import colorama
 from colorama import Fore, Back, Style, init
 import json
-with open('cenarios.json', 'r', encoding="utf8") as arquivo:
-    cenario = json.load(arquivo)
+with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
+    cenario = json.load(arquivo_c)
+
+with open('lista itens totais.json', 'r', encoding="utf8") as arquivo_i:
+    lista = json.load(arquivo_i)
 
 def carregar_cenarios():
     cenarios = cenario
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-def inventario(inv):
-    z = input("Qual item deseja pegar? ")
-    while z in opcao_item:
-        inventario_slots = []
-        for i in inv:
-            x = i.split()  # Separa.
-            h="".join(z)  # Junta tudo de novo com um espaco.
-        if not h in inv:
-            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
-            return inv
+def inventario():
+    todos_itens = lista
+    #while z in opcao_item:
+    inventario_slots = [0]*2
+    return todos_itens, inventario_slots
+#        for i in inv:
+#            x = i.split()  # Separa.
+#            h="".join(z)  # Junta tudo de novo com um espaco.
+#        if not h in inv:
+#            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
+#            return inv
             #TEM o inventario tem dois espacoes no comeco
             # ai dps da mochila aumentar x numeros
 
@@ -44,9 +48,11 @@ def main():
     time.sleep(2)
 
     cenarios, nome_cenario_atual = carregar_cenarios()
+    todos_itens,inventario_slots = inventario()
 
     game_over = False
     while not game_over:
+        inventario_atual= inventario_slots
         cenario_atual = cenarios[nome_cenario_atual]
         print(Back.RED + cenario_atual["titulo"])
         print ("----------------")
@@ -61,6 +67,7 @@ def main():
             print(Fore.CYAN + "Voce tem as seguintes opcoes:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
+            print(Back.CYAN + "SEU INVENTARIO: {0}".format(inventario_atual))
             escolhas = cenarios[nome_cenario_atual]['opcoes']
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
@@ -80,6 +87,8 @@ def main():
                 escolha = choice
                 if escolha in opcoes:
                     nome_cenario_atual = escolha
+                    if escolha == "item":
+                        inventario_atual[1]= opcoes[escolha]
                 else:
                     print("Sua indecisão foi sua ruína!")
                     game_over = True

@@ -34,13 +34,13 @@
                 "opcoes":{
                     "facebook": "entrar na rede social",
                     "blackboard": "entrar na area de aluno",
-                    "item":"um item foi encontrado",
+                    "item":"estililingue",
                     "biblioteca":"voltar para biblioteca"
                 }
         },  
             "item":{
                 "titulo":"ITEM ACHADO",
-                "descricao":"voce adquiriu um item",
+                "descricao": "voce encontrou um item",
                 "opcoes":{
                     "computadores" : "voltar"
                 }
