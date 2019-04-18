@@ -78,6 +78,8 @@ def carregar_cenarios():
                 "titulo": "O MASCOTE DO INSPER DESCONTROLADO",
                 "descricao": "O mascote do Insper ficou descontrolado",
                 "opcoes":{
+                    "Lutar": "Batalhar contra o monstro",
+                    "Fugir": ""
 
             }
 
