@@ -45,8 +45,9 @@ def main():
     while not game_over:
         inventario_atual= inventario_slots
         cenario_atual = cenarios[nome_cenario_atual]
+        print("----------------")
         print(Back.RED + cenario_atual["titulo"])
-        print ("----------------")
+        print("----------------")
         print(Fore.RED + cenario_atual["descricao"])
         print()
 
