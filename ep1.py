@@ -6,8 +6,10 @@ import time
 import colorama
 from colorama import Fore, Back, Style, init
 import json
+
 with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
     cenario = json.load(arquivo_c)
+
 
 with open('lista itens totais.json', 'r', encoding="utf8") as arquivo_i:
     lista = json.load(arquivo_i)
@@ -20,7 +22,14 @@ def carregar_cenarios():
 def inventario():
     todos_itens = lista
     inventario_slots = []*2
-    return todos_itens, inventario_slots
+    z = input("Qual item deseja pegar")
+    while z in opcao_item:
+        for i in inv:
+            x = i.split()  # Separa.
+            h="".join(z)  # Junta tudo de novo com um espaco.
+        if not h in inv:
+            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
+    return todos_itens, inventario_slots, inv
 
 def main():
     init(autoreset=True)
