@@ -5,6 +5,7 @@
 import time
 import colorama
 from colorama import Fore, Back, Style, init
+<<<<<<< HEAD
 def carregar_cenarios():
     cenarios = {
             "inicio": {
@@ -66,40 +67,24 @@ def carregar_cenarios():
                     "voltar": "Sair do Refeitorio"
             }
 
+=======
+import json
+with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
+    cenario = json.load(arquivo_c)
+>>>>>>> 0f1f6e0122f760ed2a95903d368478a40060c03c
 
-        },
-            "banheiro":{
-                "titulo":" ",
-                "descricao":"O local onde muitas coisas acontecem",
-                "opcoes":{
-            }
-        },
-            "Raposa selvagem":{
-                "titulo": "O MASCOTE DO INSPER DESCONTROLADO",
-                "descricao": "O mascote do Insper ficou descontrolado",
-                "opcoes":{
-                    "Lutar": "Batalhar contra o monstro",
-                    "Fugir": ""
+with open('lista itens totais.json', 'r', encoding="utf8") as arquivo_i:
+    lista = json.load(arquivo_i)
 
-            }
-
-            }
-        }
+def carregar_cenarios():
+    cenarios = cenario
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-def inventario(inv):
-    z = input("Qual item deseja pegar")
-    while z in opcao_item:
-        inventario_slots = []
-        for i in inv:
-            x = i.split()  # Separa.
-            h="".join(z)  # Junta tudo de novo com um espaco.
-        if not h in inv:
-            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
-            return inv
-            #TEM o inventario tem dois espacoes no comeco
-            # ai dps da mochila aumentar x numeros
+def inventario():
+    todos_itens = lista
+    inventario_slots = []*2
+    return todos_itens, inventario_slots
 
 def main():
     init(autoreset=True)
@@ -115,17 +100,19 @@ def main():
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)")
     print()
+    time.sleep(2)
 
     cenarios, nome_cenario_atual = carregar_cenarios()
+    todos_itens,inventario_slots = inventario()
 
     game_over = False
     while not game_over:
+        inventario_atual= inventario_slots
         cenario_atual = cenarios[nome_cenario_atual]
         print(Back.RED + cenario_atual["titulo"])
         print ("----------------")
         print(Fore.RED + cenario_atual["descricao"])
         print()
-        #print("para se teletransportar, voce deve saber o nome correto de cada sala" )
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
@@ -135,12 +122,13 @@ def main():
             print(Fore.CYAN + "Voce tem as seguintes opcoes:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
+            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario_atual))
             escolhas = cenarios[nome_cenario_atual]['opcoes']
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
-            choose = input("")
+            choice = input("")
             print()
-            while not choose in escolhas:
+            while not choice in escolhas:
                     print("Opcao inválida!!")
                     print("Digite como mostrado, por favor")
                     print()
@@ -148,24 +136,19 @@ def main():
                     for opcao,val in opcoes.items():
                         print(opcao,":",val)
                     print(Fore.CYAN + "O que deseja fazer?")
-                    choose = input("")
+                    choice = input("")
                     print()
-            if choose in escolhas:
-                escolha = choose
+            if choice in escolhas:
+                escolha = choice
                 if escolha in opcoes:
                     nome_cenario_atual = escolha
+                    if escolha == "item":
+                        item_achado = opcoes[escolha]
+                        if not item_achado in inventario_atual:
+                            inventario_atual.append(item_achado)
                 else:
                     print("Sua indecisão foi sua ruína!")
                     game_over = True
-                
-        #escolha_sala = input("deseja se teletransportar para algum lugar?" )
-        #if escolha_sala == "nao":
-                #print ("voce continua na mesma sala")
-        #elif escolha_sala in cenarios:
-            #if escolha_sala != cenario_atual:
-                #cenario_atual = escolha_sala 
-        #else:
-            #print("sala invalida")
 
     print("Voce morreu!")
 

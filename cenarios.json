@@ -1,0 +1,130 @@
+{
+            "inicio": {
+            "titulo": "SAGUAO DO PERIGO",
+            "descricao": "Voce esta no saguao de entrada do insper",
+            "opcoes": {
+                "refeitorio": "Tomar o elevador para o refeitorio",
+                "biblioteca": "Ir para a biblioteca"
+            }
+        },
+            "andar professor": {
+                    "titulo": "ANDAR DO DESESPERO",
+                    "descricao": "Voce chegou ao andar da sala do seu professor",
+                    "opcoes": {
+                            "inicio": "Tomar o elevador para o saguao de entrada",
+                            "professor": "Falar com o professor"
+            }
+        },
+            "professor": {
+                    "titulo": "O MOSNTRO DO PYTHON",
+                    "descricao": "Voce foi pedir para o professor adiar o EP. ",
+                    "opcoes": {}
+        },
+            "biblioteca": {
+                    "titulo": "CAVERNA DA TRANQUILIDADE",
+                    "descricao": "Voce esta na biblioteca",
+                    "opcoes": {
+                            "inicio": "Voltar para o saguao de entrada",
+                            "aquario": "Entrar em um aquário",
+                            "computadores":"navegar na internet"}
+        },
+            "computadores":{
+                "titulo": "MUNDO ONLINE",
+                "descricao": "navegue pela internet",
+                "opcoes":{
+                    "facebook": "entrar na rede social",
+                    "blackboard": "entrar na area de aluno",
+                    "item":"estililingue",
+                    "biblioteca":"voltar para biblioteca"
+                }
+        },  
+            "item":{
+                "titulo":"ITEM ACHADO",
+                "descricao": "voce encontrou um item",
+                "opcoes":{
+                    "computadores" : "voltar"
+                }
+
+        },
+            "facebook":{
+                "titulo":"REDE SOCIAL",
+                "descricao" : ".",
+                "opcoes":{
+                    "biblioteca":"voltar",
+                    "mensagem":"o que será?"
+                }
+        },
+            "mensagem":{
+                "titulo" : "mensagem",
+                "descricao" : "dica anonima: ...",
+                "opcoes" : {
+                    "facebook":"voltar"
+                }
+        },
+            "blackboard":{
+                "titulo":"PORTAL DO ALUNO",
+                "descricao":"dica: ...",
+                "opcoes":{
+                    "biblioteca":"voltar"
+                }
+        },
+            "aquario": {
+                "titulo":"LUGAR DA PRIVACIDADE",
+                "descricao":"voce entrou na sala de estudo em grupo",
+                "opcoes":{"biblioteca": "volte para biblioteca",
+                    "conversar com os amigos": "passe tempo de qualidade com eles"
+                                    }
+        },
+            "conversar com os amigos":{
+                "titulo" : "CILADA",
+                "descricao" : "um de seus amigos se mostrou um monstro",
+                "opcoes" : {
+                    "lutar":"batalhar contra o mosntro",
+                    "fugir":"deixe seus amigos serem devorados"
+                }
+        },
+            "lutar":{
+                "titulo":"BATALHA",
+                "descricao":"derrote o mosntro",
+                "opcoes":{
+                    "inicio":"voltar"
+                }
+
+        },
+            "fugir":{
+                "titulo": "COVARDE",
+                "descricao" : "merece morrer",
+                "opcoes" : {}
+
+        },  
+            "refeitorio":{
+                "titulo": "TERRA DA COMILANCIA",
+                "descricao":"Ao olhar ao redor vc viu o Professor De DesSoft da turma A, e que o clima daquele local estava estranho",
+                "opcoes":{
+                    "professor da turma A": "conversar com o mesmo",
+                    "inicio": "voltar para o saguao",
+                    "banheiro": "checar o banheiro"
+            }
+
+        },
+            "professor da turma A":{
+                "titulo":"ANJO DA INFORMACAO",
+                "descricao" : "Será que a sua ajuda irá leva-lo à ruina?",
+                "opcoes":{"fala":"voce precisará de um livro! como prsente você poderá se teletransportar para qualquer local, mas deve digitar o nome corretamente! (dica crucial: perto do audiotorio)"}
+        },
+            "banheiro":{
+                "titulo": "CASA DO ESPELHO ",
+                "descricao":"O local onde muitas coisas acontecem",
+                "opcoes":{
+            }
+        },
+            "Raposa selvagem":{
+                "titulo": "O MASCOTE",
+                "descricao": "O mascote do Insper ficou descontrolado",
+                "opcoes":{
+                    "Lutar": "Batalhar contra o monstro",
+                    "Fugir": ""
+            }
+
+            }
+        }
