@@ -34,7 +34,7 @@
                 "opcoes":{
                     "facebook": "entrar na rede social",
                     "blackboard": "entrar na area de aluno",
-                    "item":"estililingue",
+                    "item":"chave",
                     "biblioteca":"voltar para biblioteca"
                 }
         },  
@@ -110,7 +110,16 @@
             "professor da turma A":{
                 "titulo":"ANJO DA INFORMACAO",
                 "descricao" : "Será que a sua ajuda irá leva-lo à ruina?",
-                "opcoes":{"fala":"voce precisará de um livro! como prsente você poderá se teletransportar para qualquer local, mas deve digitar o nome corretamente! (dica crucial: perto do audiotorio)"}
+                "opcoes":{
+                    "fala":"escute oque o professor tem a te dizer",
+                    "refeitorio":"voltar"}
+        },
+            "fala":{
+                "titulo":"O PROFESSOR TEM ALGO PARA TE FALAR",
+                "descricao":"voce precisará de um livro! como prsente você poderá se teletransportar para qualquer local, mas deve digitar o nome corretamente! (dica crucial: perto do audiotorio)",
+                "opcoes":{
+                    "refeitorio":"voltar",
+                    "teletransporte":"trocar de sala"}
         },
             "banheiro":{
                 "titulo": "CASA DO ESPELHO ",
