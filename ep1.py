@@ -28,7 +28,7 @@ def inventario():
             x = i.split()  # Separa.
             h="".join(z)  # Junta tudo de novo com um espaco.
         if not h in inv:
-            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
+            inventario_slots.append(h)  # Adiciona elementos que nao estao presentes na lista
     return todos_itens, inventario_slots, inv
 
 def main():
