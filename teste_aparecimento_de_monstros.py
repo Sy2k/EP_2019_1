@@ -15,12 +15,6 @@ def aparecer_monstros(dados):
 
 print (aparecer_monstros(dados))
 
-def batalha(dados):  
-	n=0
-	list_0 = []
-	list_0.append(Aparecimento_de_Mons(dados))
-print("Você escolheu o item: {0}".format(dados[6]['nome'])) 
-
 def batalha(dados):
 	dados2 = aparecer_monstros(dados)
 	villain= dados2
