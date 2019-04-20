@@ -22,6 +22,7 @@ def carregar_cenarios():
 def inventario():
     todos_itens = lista
     inventario_slots = []*2
+<<<<<<< HEAD
     return todos_itens, inventario_slots
 #    z = input("Qual item deseja pegar")
 #    while z in opcao_item:
@@ -35,6 +36,15 @@ def teletransporte():
     lista_t = lista_tele
     nome_cenario_teletransporte = "teletransporte"
     return lista_t,nome_cenario_teletransporte
+
+#    z = input("Qual item deseja pegar")
+#    while z in opcao_item:
+#        for i in inv:
+#            x = i.split()  # Separa.
+#            h="".join(z)  # Junta tudo de novo com um espaco.
+#        if not h in inv:
+#            inventario_slots.append(h)  # Adiciona elementos que nao estao presentes na lista
+#    return todos_itens, inventario_slots, inv
 
 def main():
     init(autoreset=True)
