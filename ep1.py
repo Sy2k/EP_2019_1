@@ -46,6 +46,7 @@ def teletransporte():
 #            inventario_slots.append(h)  # Adiciona elementos que nao estao presentes na lista
 #    return todos_itens, inventario_slots, inv
 
+
 def main():
     init(autoreset=True)
     print()
