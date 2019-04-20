@@ -1,5 +1,6 @@
  #----------------------------------------Teste-----------------------------------------
 import json
+import random
 with open("HP_HitPoint_Defense(teste).json","r", encoding="utf8") as arquivo:
 	dados = json.load(arquivo)
 def aparecer_monstros(dados):
@@ -12,8 +13,11 @@ def aparecer_monstros(dados):
 	print(lista_Mons[key])
 	return lista_Mons[key]
 
-print (Aparecimento_de_Mons(dados))
+print (aparecer_monstros(dados))
+"""
 def batalha(dados):  
 	n=0
 	list_0 = []
 	list_0.append(Aparecimento_de_Mons(dados))
+print("Você escolheu o item: {0}".format(dados[6]['nome'])) 
+"""
