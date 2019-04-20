@@ -47,12 +47,13 @@ def batalha(dados, dados_char):
 			resultado = "O monstro não faz nem cocegas"
 		return resultado
 
-def premios(data):
+def premios(data): #batalha mais premios 
 	dados2 = aparecer_monstros(dados)
 	villain= dados2
 	char = dados_char[1]
-	premio = False
+	premio = data[]
 	while char['HP'] > 0  or villain['HP'] > 0:
+		premio = False
 		if char['HitPoint'] > villain['defensa']:
 			villain['HP'] = villain['HP'] - (char['HitPoint'] - villain['defesa'])
 			if villain['HP'] <=0:
@@ -67,8 +68,7 @@ def premios(data):
 					elif villain == dados[5]:
 						print("O monstro dropou o seguinte item: {0}".format(data[2]["nome"]))
 					elif villain == dados[6]:
-						print("O monstro dropou o seguinte item: {0}".format(data[5]["nome"]))
-						
+						print("O monstro dropou o seguinte item: {0}".format(data[5]["nome"]))			
 		elif char['HitPoint'] <= villain['defesa']:  # Quando  o poder de ataque do jogador for
 		    villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
 			resultado = "Você nem faz cocegas no monstro"
