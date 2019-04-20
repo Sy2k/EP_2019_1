@@ -31,7 +31,7 @@ def batalha():
 		elif char['HitPoint'] <= villain['defesa']:  # Quando  o poder de ataque do jogador for
 		    villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
 			resultado = "Você nem faz cocegas no monstro"
-			return resultado
+			print(resultado) 
 
 		elif villain['HitPoint'] > char['defesa']:
 			char['HP'] = char['HP'] - (villain['HitPoint'] - char['defesa'])
@@ -43,4 +43,5 @@ def batalha():
 			char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
 			return resultado
+
 print(batalha())
