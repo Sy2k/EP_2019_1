@@ -1,4 +1,4 @@
- #----------------------------------------Teste-----------------------------------------
+ #----------------------------------------Teste esta dando ERROOOOOO-----------------------------------------
 import json
 import random
 with open("HP_HitPoint_Defense(teste).json","r", encoding="utf8") as arquivo:
@@ -7,6 +7,8 @@ with open("char_caract.json", "r", encoding="utf8") as arqz:
 	dados_char = json.load(arqz)
 with open("premios.json","r",encoding="utf8") as arquivoL:
     data = json.load(arquivoL)
+with open("Lista_itens_descricao.json","r", encoding="utf8") as i:
+	info = json.load(i)
 
 def aparecer_monstros(dados):
 	lista_Mons = []
@@ -47,10 +49,12 @@ def batalha(dados, dados_char):
 			resultado = "O monstro não faz nem cocegas"
 		return resultado
 """
+list_new_data = []# tentando criar um bagy para ir guardando as alteracoes dos HitPoint
 def premios(data): #batalha mais premios 
 	dados2 = aparecer_monstros(dados)
 	villain= dados2
 	char = dados_char[1]
+	list_new_data.append(data[1]["nome"]data[1]["HitPoint"]data[1]["HP"]data[1]["HP"])
 	while char['HP'] > 0  or villain['HP'] > 0:
 		premio = False
 		if char['HitPoint'] > villain['defensa']:
@@ -65,7 +69,8 @@ def premios(data): #batalha mais premios
 							print("Invalido, por favor escreva como mostrado")
 							z = input("Deseja pegar o item dropado?(sim/nao)")
 						if z == "sim":
-							inventario_slots.append(data[6])
+							inv.append(data[6])
+
 						elif z == "nao":
 							print("Okay, continue sua jornada arriscada")
 
@@ -76,7 +81,7 @@ def premios(data): #batalha mais premios
 							print("Invalido, por favor escreva como mostrado")
 							z = input("Deseja pegar o item dropado?(sim/nao)")
 						if z == "sim":
-							inventario_slots.append(data[6])
+							inv.append(data[6])
 						elif z == "nao":
 							print("Okay, continue sua jornada arriscada")
 
@@ -87,7 +92,7 @@ def premios(data): #batalha mais premios
 							print("Invalido, por favor escreva como mostrado")
 							z = input("Deseja pegar o item dropado?(sim/nao)")
 						if z == "sim":
-							inventario_slots.append(data[6])
+							inv.append(data[6])
 						elif z == "nao":
 							print("Okay, continue sua jornada arriscada")
 
@@ -98,7 +103,7 @@ def premios(data): #batalha mais premios
 							print("Invalido, por favor escreva como mostrado")
 							z = input("Deseja pegar o item dropado?(sim/nao)")
 						if z == "sim":
-							inventario_slots.append(data[6])
+							inv.append(data[6])
 						elif z == "nao":
 							print("Okay, continue sua jornada arriscada")
 
@@ -109,7 +114,7 @@ def premios(data): #batalha mais premios
 							print("Invalido, por favor escreva como mostrado")
 							z = input("Deseja pegar o item dropado?(sim/nao)")
 						if z == "sim":
-							inventario_slots.append(data[6])
+							inv.append(data[6])
 						elif z == "nao":
 							print("Okay, continue sua jornada arriscada")	
 
