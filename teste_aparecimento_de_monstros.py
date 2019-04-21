@@ -19,7 +19,7 @@ def aparecer_monstros(dados):
 	return lista_Mons[key]
 
 print (aparecer_monstros(dados))
-
+"""
 def batalha(dados, dados_char):
 	dados2 = aparecer_monstros(dados)
 	villain= dados2
@@ -46,12 +46,11 @@ def batalha(dados, dados_char):
 			char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
 		return resultado
-
+"""
 def premios(data): #batalha mais premios 
 	dados2 = aparecer_monstros(dados)
 	villain= dados2
 	char = dados_char[1]
-	premio = data[]
 	while char['HP'] > 0  or villain['HP'] > 0:
 		premio = False
 		if char['HitPoint'] > villain['defensa']:
@@ -61,18 +60,63 @@ def premios(data): #batalha mais premios
 				while premio == True:
 					if villain == dados[2]:
 						print("O monstro dropou o seguinte item: {0}".format(data[6]["nome"]))
+						z = input("Deseja pegar o item dropado?(sim/não) ")
+						while z!="sim" or z!="nao":
+							print("Invalido, por favor escreva como mostrado")
+							z = input("Deseja pegar o item dropado?(sim/nao)")
+						if z == "sim":
+							inventario_slots.append(data[6])
+						elif z == "nao":
+							print("Okay, continue sua jornada arriscada")
+
 					elif villain == dados[3]:
 						print("O monstro dropou o seguinte item: {0}".format(data[1]["nome"]))
+						z = input("Deseja pegar o item dropado?(sim/não) ")
+						while z!="sim" or z!="nao":
+							print("Invalido, por favor escreva como mostrado")
+							z = input("Deseja pegar o item dropado?(sim/nao)")
+						if z == "sim":
+							inventario_slots.append(data[6])
+						elif z == "nao":
+							print("Okay, continue sua jornada arriscada")
+
 					elif villain == dados[4]:
 						print("O monstro dropou o seguinte item: {0}".format(data[4]["nome"]))
+						z = input("Deseja pegar o item dropado?(sim/não) ")
+						while z!="sim" or z!="nao":
+							print("Invalido, por favor escreva como mostrado")
+							z = input("Deseja pegar o item dropado?(sim/nao)")
+						if z == "sim":
+							inventario_slots.append(data[6])
+						elif z == "nao":
+							print("Okay, continue sua jornada arriscada")
+
 					elif villain == dados[5]:
 						print("O monstro dropou o seguinte item: {0}".format(data[2]["nome"]))
+						z = input("Deseja pegar o item dropado?(sim/não) ")
+						while z!="sim" or z!="nao":
+							print("Invalido, por favor escreva como mostrado")
+							z = input("Deseja pegar o item dropado?(sim/nao)")
+						if z == "sim":
+							inventario_slots.append(data[6])
+						elif z == "nao":
+							print("Okay, continue sua jornada arriscada")
+
 					elif villain == dados[6]:
-						print("O monstro dropou o seguinte item: {0}".format(data[5]["nome"]))			
+						print("O monstro dropou o seguinte item: {0}".format(data[5]["nome"]))
+						z = input("Deseja pegar o item dropado?(sim/não) ")
+						while z!="sim" or z!="nao":
+							print("Invalido, por favor escreva como mostrado")
+							z = input("Deseja pegar o item dropado?(sim/nao)")
+						if z == "sim":
+							inventario_slots.append(data[6])
+						elif z == "nao":
+							print("Okay, continue sua jornada arriscada")	
+
 		elif char['HitPoint'] <= villain['defesa']:  # Quando  o poder de ataque do jogador for
-		    villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
+		    #villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
 			resultado = "Você nem faz cocegas no monstro"
-			return resultado 
+			return resultado
 
 		elif villain['HitPoint'] > char['defesa']:
 			char['HP'] = char['HP'] - (villain['HitPoint'] - char['defesa'])
@@ -82,7 +126,7 @@ def premios(data): #batalha mais premios
 				return resultado
 
 		elif villain['HitPoint'] < char['defesa']:
-			char['HP'] = char['HP']
+		#	char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
 		return resultado
- 
+print(premios(data))

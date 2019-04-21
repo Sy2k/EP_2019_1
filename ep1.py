@@ -11,19 +11,18 @@ with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
     cenario = json.load(arquivo_c)
 with open('lista_itens_totais.json', 'r', encoding="utf8") as arquivo_i:
     lista = json.load(arquivo_i)
-with open('teletransporte.json', 'r', encoding='utf8') as arquivo_t:
-    lista_tele = json.load(arquivo_t)
+#with open('teletransporte.json', 'r', encoding='utf8') as arquivo_t:
+   # lista_tele = json.load(arquivo_t)
 
 def carregar_cenarios():
     cenarios = cenario
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-def inventario():
-    todos_itens = lista
-    inventario_slots = []*2
-<<<<<<< HEAD
-    return todos_itens, inventario_slots
+#def inventario():
+#    todos_itens = lista
+#    inventario_slots = []*2
+#    return todos_itens, inventario_slots
 #    z = input("Qual item deseja pegar")
 #    while z in opcao_item:
 #        for i in inv:
@@ -32,10 +31,10 @@ def inventario():
 #       if not h in inv:
 #            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
 #    return todos_itens, inventario_slots, inv
-def teletransporte():
-    lista_t = lista_tele
-    nome_cenario_teletransporte = "teletransporte"
-    return lista_t,nome_cenario_teletransporte
+#def teletransporte():
+#    lista_t = lista_tele
+#    nome_cenario_teletransporte = "teletransporte"
+#    return lista_t,nome_cenario_teletransporte
 
 #    z = input("Qual item deseja pegar")
 #    while z in opcao_item:
@@ -69,7 +68,7 @@ def main():
 
     game_over = False
     while not game_over:
-        inventario_atual= inventario_slots
+        #inventario_atual= inventario_slots
         cenario_atual = cenarios[nome_cenario_atual]
         cenario_teletransporte = lista_t[nome_cenario_teletransporte]
 
@@ -116,8 +115,6 @@ def main():
                     teletransporte_escolha = input("para onde deseja se teletransportar? ")
                     cenario_teletransporte = teletransporte_escolha
                     nome_cenario_atual = cenario_teletransporte
-            
-
     print("Voce morreu!")
 
 
