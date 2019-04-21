@@ -2,50 +2,53 @@
 #Stephanie : stephaniel@al.insper.edu.br
 #Ellen : ellenbs@al.insper.edu.br
 #Ellen - dicionario
-import time
+import time # a fim de usar time.sleep(z), onde z eh demonimado como um numero
 import colorama
-from colorama import Fore, Back, Style, init
-import json
+from colorama import Fore, Back, Style, init #ira "colorir" 
+import json # a fim de importar os arquivos
 
 with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
     cenario = json.load(arquivo_c)
+
 with open('lista_itens_totais.json', 'r', encoding="utf8") as arquivo_i:
     lista = json.load(arquivo_i)
-#with open('teletransporte.json', 'r', encoding='utf8') as arquivo_t:
-   # lista_tele = json.load(arquivo_t)
 
-def carregar_cenarios():
+with open('teletransporte.json', 'r', encoding='utf8') as arquivo_t:
+    lista_tele = json.load(arquivo_t)
+
+def carregar_cenarios(): 
     cenarios = cenario
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-#def inventario():
-#    todos_itens = lista
-#    inventario_slots = []*2
-#    return todos_itens, inventario_slots
-#    z = input("Qual item deseja pegar")
-#    while z in opcao_item:
-#        for i in inv:
-#            x = i.split()  # Separa.
-#            h="".join(z)  # Junta tudo de novo com um espaco.
-#       if not h in inv:
-#            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
-#    return todos_itens, inventario_slots, inv
-#def teletransporte():
-#    lista_t = lista_tele
-#    nome_cenario_teletransporte = "teletransporte"
-#    return lista_t,nome_cenario_teletransporte
+def inventario(): #criando um inventario inicialmente de dois espacos
+    todos_itens = lista
+    inventario_slots = []*2
+    return todos_itens, inventario_slots
+    z = input("Qual item deseja pegar")
+    while z in opcao_item:
+        for i in inv:
+            x = i.split()  # Separa.
+            h="".join(z)  # Junta tudo de novo com um espaco.
+        if not h in inv:
+            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
+    return todos_itens, inventario_slots, inv
 
-#    z = input("Qual item deseja pegar")
-#    while z in opcao_item:
-#        for i in inv:
-#            x = i.split()  # Separa.
-#            h="".join(z)  # Junta tudo de novo com um espaco.
-#        if not h in inv:
-#            inventario_slots.append(h)  # Adiciona elementos que nao estao presentes na lista
-#    return todos_itens, inventario_slots, inv
-
-
+def teletransporte(): #feature teletransporte
+    lista_t = lista_tele
+    nome_cenario_teletransporte = "teletransporte"
+    return lista_t,nome_cenario_teletransporte
+"""
+    z = input("Qual item deseja pegar")
+    while z in opcao_item:
+        for i in inv:
+            x = i.split()  # Separa.
+            h="".join(z)  # Junta tudo de novo com um espaco.
+        if not h in inv:
+            inventario_slots.append(h)  # Adiciona elementos que nao estao presentes na lista
+    return todos_itens, inventario_slots, inv
+???????
+"""
 def main():
     init(autoreset=True)
     print()
@@ -54,7 +57,7 @@ def main():
     print()
     print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
         "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...")
-    time.sleep(2)
+    time.sleep(2) # tempo da pessoa ler todo o texto e aparecera o outro
     print()
     print("É o dia de entregar o EP e você está muuuuito atrasado! Voce está "
         "na entrada do Insper, e quer procurar o professor para pedir um "
@@ -67,8 +70,8 @@ def main():
     lista_t, nome_cenario_teletransporte = teletransporte()
 
     game_over = False
-    while not game_over:
-        #inventario_atual= inventario_slots
+    while not game_over: #enquanto a pessoa nao pereder
+        inventario_atual= inventario_slots #o inventario sera igual a lista criada na sua funcao
         cenario_atual = cenarios[nome_cenario_atual]
         cenario_teletransporte = lista_t[nome_cenario_teletransporte]
 
@@ -93,9 +96,9 @@ def main():
 
             while not escolha_digitada in opcoes and lista_t:
                     print(Back.CYAN + "Opcao inválida!!")
-                    print("Digite como mostrado, por favor")
+                    print("Digite como mostrado, por favor") # enquanto escrever errado ira mostrar essa mensagem
                     print()
-                    print(Fore.CYAN + "Voce tem as seguintes opcoes:") 
+                    print(Fore.CYAN + "Voce tem as seguintes opcoes:")# ira mostrar novalmente as oopcoes
                     for opcao,val in opcoes.items():
                         print(opcao,":",val)
                     print(Fore.CYAN + "O que deseja fazer?")
