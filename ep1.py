@@ -22,7 +22,6 @@ def carregar_cenarios():
 def inventario():
     todos_itens = lista
     inventario_slots = []*2
-<<<<<<< HEAD
     return todos_itens, inventario_slots
 #    z = input("Qual item deseja pegar")
 #    while z in opcao_item:
