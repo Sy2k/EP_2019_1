@@ -3,9 +3,26 @@
             "titulo": "SAGUAO DO PERIGO",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
-                "refeitorio": "Tomar o elevador para o refeitorio",
+                "elevador": "Tomar o elevador",
                 "biblioteca": "Ir para a biblioteca"
             }
+        },
+            "elevador":{
+                "titulo":"ELEVADOR",
+                "descricao":"escolha um andar",
+                "opcoes":{
+                    "refeitorio":"ir para o refeitorio",
+                    "andar 3":"maquinas de comida"
+                }
+
+        },
+            "andar 3":{
+                "titulo":"MAQUINAS DE COMIDA",
+                "descricao":"(desenvolver)",
+                "opcoes":{
+                    "item":"pimenta"
+                }
+
         },
             "andar professor": {
                     "titulo": "ANDAR DO DESESPERO",
@@ -32,17 +49,17 @@
                 "titulo": "MUNDO ONLINE",
                 "descricao": "navegue pela internet",
                 "opcoes":{
+                    "biblioteca":"voltar para biblioteca",
                     "facebook": "entrar na rede social",
                     "blackboard": "entrar na area de aluno",
-                    "item":"chave",
-                    "biblioteca":"voltar para biblioteca"
+                    "item":"chave"
                 }
         },  
             "item":{
                 "titulo":"ITEM ACHADO",
                 "descricao": "voce encontrou um item",
                 "opcoes":{
-                    "computadores" : "voltar"
+                    "inicio" : "voltar"
                 }
 
         },
@@ -101,8 +118,8 @@
                 "titulo": "TERRA DA COMILANCIA",
                 "descricao":"Ao olhar ao redor vc viu o Professor De DesSoft da turma A, e que o clima daquele local estava estranho",
                 "opcoes":{
-                    "professor da turma A": "conversar com o mesmo",
                     "inicio": "voltar para o saguao",
+                    "professor da turma A": "conversar com o mesmo",
                     "banheiro": "checar o banheiro"
             }
 
