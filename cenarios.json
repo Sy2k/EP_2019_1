@@ -151,6 +151,14 @@
                     "Lutar": "Batalhar contra o monstro",
                     "Fugir": ""
             }
+        },
+            "foyer" : { 
+                "titulo":"SALA SECRETA",
+                "descricao":"voce encontrou um local secreto",
+                "opcoes":{ 
+                    "item" : "livro de literatura"
+                }
 
-            }
+
         }
+}
