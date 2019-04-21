@@ -12,9 +12,11 @@ with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
 
 with open('lista_itens_totais.json', 'r', encoding="utf8") as arquivo_i:
     lista = json.load(arquivo_i)
+with open('teletransporte_teste.json', 'r', encoding="utf8") as arquivo_tele:
+    lista_tele = json.load(arquivo_tele)
 
-with open('teletransporte.json', 'r', encoding='utf8') as arquivo_t:
-    lista_tele = json.load(arquivo_t)
+#with open('teletransporte.json', 'r', encoding='utf8') as arquivo_t:
+#    lista_tele = json.load(arquivo_t)
 
 def carregar_cenarios(): 
     cenarios = cenario
@@ -34,21 +36,11 @@ def inventario(): #criando um inventario inicialmente de dois espacos
             inv.append(h)  # Adiciona elementos que nao estao presentes na lista
     return todos_itens, inventario_slots, inv
 
-def teletransporte(): #feature teletransporte
+def teletransporte(lista_tele): #feature teletransporte
     lista_t = lista_tele
     nome_cenario_teletransporte = "teletransporte"
     return lista_t,nome_cenario_teletransporte
-"""
-    z = input("Qual item deseja pegar")
-    while z in opcao_item:
-        for i in inv:
-            x = i.split()  # Separa.
-            h="".join(z)  # Junta tudo de novo com um espaco.
-        if not h in inv:
-            inventario_slots.append(h)  # Adiciona elementos que nao estao presentes na lista
-    return todos_itens, inventario_slots, inv
-???????
-"""
+
 def main():
     init(autoreset=True)
     print()
@@ -67,14 +59,19 @@ def main():
 
     cenarios, nome_cenario_atual = carregar_cenarios()
     todos_itens,inventario_slots = inventario()
-    lista_t, nome_cenario_teletransporte = teletransporte()
+    lista_t, nome_cenario_teletransporte = teletransporte(lista_tele)
 
     game_over = False
     while not game_over: #enquanto a pessoa nao pereder
-        inventario_atual= inventario_slots #o inventario sera igual a lista criada na sua funcao
+        inventario_atual= inventario_slots #o inventario sera igual a lista criada na funcao do inventario
         cenario_atual = cenarios[nome_cenario_atual]
-        cenario_teletransporte = lista_t[nome_cenario_teletransporte]
-
+        #cenario_teletransporte = lista_t[nome_cenario_teletransporte]
+        if cenario_teletransporte == "biblioteca":
+            cenario_teletransporte = lista_t[1]["Nome do local"]
+        elif cenario_teletransporte == "aquario":
+            cenario_teletransporte = lista_t[2]["Nome do local"]
+        elif cenario_transporte == "foyer":
+            cenar
         print("----------------")
         print(Back.RED + cenario_atual["titulo"])
         print("----------------")
