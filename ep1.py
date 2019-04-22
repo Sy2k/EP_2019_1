@@ -6,6 +6,7 @@ import time # a fim de usar time.sleep(z), onde z eh demonimado como um numero
 import colorama
 from colorama import Fore, Back, Style, init # "colorir" 
 import json # a fim de importar os arquivos
+import random
 
 with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
     cenario = json.load(arquivo_c)
