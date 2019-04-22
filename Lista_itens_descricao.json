@@ -1,16 +1,16 @@
 [
-{"nome":"estilingue","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"taco","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"bola de futebol","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"livro de literatura","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"panela","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"chaves","plus HitPoint":0,"Plus na defesa ":0,"Plus na Fuga":40},
-{"nome":"balde de tinta","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"frigideira","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"colher","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"faca","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"agua fervente","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"pimenta","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40},
-{"nome":"casca de banana","plus HitPoint":10,"Plus na defesa":0,"Plus na Fuga":40}
+{"nome":"estilingue","plus HitPoint":6,"Plus na defesa":0},
+{"nome":"taco","plus HitPoint":5,"Plus na defesa":2},
+{"nome":"bola de futebol","plus HitPoint":4,"Plus na defesa":5},
+{"nome":"livro de literatura","plus HitPoint":90,"Plus na defesa":100},
+{"nome":"panela","plus HitPoint":10,"Plus na defesa":1},
+{"nome":"chaves","plus HitPoint":0,"Plus na defesa ":0},
+{"nome":"balde de tinta","plus HitPoint":7,"Plus na defesa":3},
+{"nome":"frigideira","plus HitPoint":9,"Plus na defesa":5},
+{"nome":"colher","plus HitPoint":8,"Plus na defesa":5},
+{"nome":"faca","plus HitPoint":4,"Plus na defesa":2},
+{"nome":"agua fervente","plus HitPoint":10,"Plus na defesa":0},
+{"nome":"bolo","plus HitPoint":10,"Plus na defesa":0},
+{"nome":"casca de banana","plus HitPoint":10,"Plus na defesa":10}
 ]
 
