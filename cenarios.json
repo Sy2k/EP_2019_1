@@ -4,7 +4,8 @@
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "elevador": "Tomar o elevador",
-                "biblioteca": "Ir para a biblioteca"
+                "biblioteca": "Ir para a biblioteca",
+                "foyer":"va para o foyer"
             }
         },
             "elevador":{
@@ -12,23 +13,46 @@
                 "descricao":"escolha um andar",
                 "opcoes":{
                     "refeitorio":"ir para o refeitorio",
-                    "andar 3":"maquinas de comida"
+                    "andar 4":"vá para o andar de alunos de engenharia"
                 }
-
         },
-            "andar 3":{
-                "titulo":"MAQUINAS DE COMIDA",
-                "descricao":"(desenvolver)",
+            "4 andar":{
+                "titulo":"ANDAR DOS LABORATORIOS SUSPEITOS",
+                "descricao":"apenas alunos de engenharia tem a coragem de subir aqui",
                 "opcoes":{
-                    "item":"pimenta"
+                    "elevador":"voltar para o elevador",
+                    "maquina de comida":"ir para maquinas de comida/bebida",
+                    "laboratorio":"ir para laboratorio",
+                    "sala de descanso":"deitar para descansar"
                 }
+        },
+            "maquina de comida":{
+                "titulo":"GORDICES",
+                "descricao":"comidinhas boas",
+                "opcoes":{
+                    "andar 4":"voltar",
+                    "item":"bolo ana maria"
+                }
+        },
+            "laboratorio":{
+                "titulo":"EXPERIMENTOS ESQUISITOS",
+                "descricao":"onde se pode testar tudo",
+                "opcoes":{
+                    "andar 4":"voltar",
+                    "item":"frigideira"
+                }
+        },
+            "sala de descanso":{
+                "titulo":"MOMENTO DE PAZ",
+                "descricao":"onde se pode dormir, estudar e até jogar videogame",
+                "opcoes":{"4 andar":"voltar"}
 
         },
-            "andar professor": {
-                    "titulo": "ANDAR DO DESESPERO",
-                    "descricao": "Voce chegou ao andar da sala do seu professor",
+            "sala professor": {
+                    "titulo": "SALA DO DESESPERO",
+                    "descricao": "Voce chegou na sala do seu professor",
                     "opcoes": {
-                            "inicio": "Tomar o elevador para o saguao de entrada",
+                            "6 andar": "voltar",
                             "professor": "Falar com o professor"
             }
         },
@@ -57,9 +81,10 @@
         },  
             "item":{
                 "titulo":"ITEM ACHADO",
-                "descricao": "voce encontrou um item",
+                "descricao": "voce encontrou um item, continue explorando!",
                 "opcoes":{
-                    "inicio" : "voltar"
+                    "elevador":"ir para elevador",
+                    "inicio" : "ir para saguao"
                 }
 
         },
@@ -67,35 +92,37 @@
                 "titulo":"REDE SOCIAL",
                 "descricao" : ".",
                 "opcoes":{
-                    "biblioteca":"voltar",
+                    "computadores":"voltar",
                     "mensagem":"o que será?"
                 }
         },
             "mensagem":{
-                "titulo" : "mensagem",
-                "descricao" : "dica anonima: ...",
+                "titulo" : "MENSAGEM",
+                "descricao" : "messenger",
                 "opcoes" : {
-                    "facebook":"voltar"
+                    "dica":"tenha mais de x HP para adiar a EP",
+                    "computadores":"voltar"
                 }
         },
             "blackboard":{
                 "titulo":"PORTAL DO ALUNO",
-                "descricao":"dica: ...",
+                "descricao":"ferramenta para ajudar os alunos",
                 "opcoes":{
-                    "biblioteca":"voltar"
+                    "dica":"professor se encontra no caminho pelo refeitorio",
+                    "computadores":"voltar"
                 }
         },
             "aquario": {
                 "titulo":"LUGAR DA PRIVACIDADE",
                 "descricao":"voce entrou na sala de estudo em grupo",
-                "opcoes":{"biblioteca": "volte para biblioteca",
+                "opcoes":{"biblioteca": "voltar para biblioteca",
                     "conversar com os amigos": "passe tempo de qualidade com eles"
                                     }
         },
             "conversar com os amigos":{
                 "titulo" : "CILADA",
-                "descricao" : "um de seus amigos se mostrou um monstro",
-                "opcoes" : {}
+                "descricao" : "mosntro!!",
+                "opcoes" : { "biblioteca":"voltar" }
         },  
             "refeitorio":{
                 "titulo": "TERRA DA COMILANCIA",
@@ -105,7 +132,6 @@
                     "professor da turma A": "conversar com o mesmo",
                     "banheiro": "checar o banheiro"
             }
-
         },
             "professor da turma A":{
                 "titulo":"ANJO DA INFORMACAO",
@@ -116,32 +142,40 @@
         },
             "fala":{
                 "titulo":"O PROFESSOR TEM ALGO PARA TE FALAR",
-                "descricao":"voce precisará de um livro! como prsente você poderá se teletransportar para qualquer local, mas deve digitar o nome corretamente! (dica crucial: perto do audiotorio)",
+                "descricao":"voce precisará de um livro!",
                 "opcoes":{
                     "refeitorio":"voltar",
-                    "teletransporte":"trocar de sala"}
+                    "elevador 2":"troque de andar utilizando outro elevador"}
+        },
+            "elevador 2":{
+                "titulo":"SUBA ATÉ DIFERENTES ANDARES",
+                "descricao":"sobe além do 5º andar",
+                "opcoes":{
+                    "refeitorio":"ir para refeitorio",
+                    "6 andar":"ir para 7º andar",
+                    "8 andar":"ir para 8º andar"
+                }
+        },
+            "6 andar":{
+                "titulo":"6º ANDAR",
+                "descricao":"sexto andar do prédio",
+                "opcoes":{
+                    "elevador 2": "voltar para o elevador",
+                    "sala professor":"sala onde o professor de DesSoft está"
+                }
+        },
+            "8 andar":{
+                "titulo":"8º ANDAR",
+                "descricao":"oitavo andar do prédio",
+                "opcoes":{
+                    "elevador 2":"voltar para o elevador",
+                    "item":"balde de tinta"
+                }
         },
             "banheiro":{
                 "titulo": "CASA DO ESPELHO ",
                 "descricao":"O local onde muitas coisas acontecem",
-                "opcoes":{
-            }
-        },
-            "Raposa selvagem":{
-                "titulo": "O MASCOTE",
-                "descricao": "O mascote do Insper ficou descontrolado",
-                "opcoes":{
-                    "Lutar": "Batalhar contra o monstro",
-                    "Fugir": ""
-            }
-        },
-            "foyer" : { 
-                "titulo":"SALA SECRETA",
-                "descricao":"voce encontrou um local secreto",
-                "opcoes":{ 
-                    "item" : "livro de literatura"
-                }
-
+                "opcoes":{ "refeitorio":"voltar" }
 
         }
 }
