@@ -1,4 +1,3 @@
- #----------------------------------------Teste esta dando ERROOOOOO-----------------------------------------
 import json
 import random
 
@@ -52,7 +51,7 @@ def batalha(dados, dados_char):
 	return resultado
 
 #list_new_data = []# tentando criar um bagy para ir guardando as alteracoes dos HitPoint
-def premios(data):#batalha mais premios
+def premios_combate(data):#batalha mais premios
 	game_over = False 
 	while not game_over:
 		n=0
@@ -82,7 +81,7 @@ def premios(data):#batalha mais premios
 			if char["HitPoint"] > villain["defesa"]:
 				villain["HP"] = villain["HP"] - (char["HitPoint"] - villain["defesa"])
 				if villain["HP"] <=0:
-					print("Você matou o monstro")
+					resultado = "Você matou o monstro"
 					premio = True
 					if premio == True: # dando o premio apos matar o monstro (item dropado)
 						if villain == dados[1]["nome"]: # cada tipo de monstro apos ser derrotado dropa um tipo de item
@@ -97,6 +96,7 @@ def premios(data):#batalha mais premios
 							elif z == "nao":
 								print("Okay, continue sua jornada arriscada")
 							break
+
 						elif villain == dados[2]:
 							print("O monstro dropou o seguinte item: {0}".format(data[1]["nome"]))
 							z = input("Deseja pegar o item dropado?(sim/não): ")
@@ -108,6 +108,7 @@ def premios(data):#batalha mais premios
 							elif z == "nao":
 								print("Okay, continue sua jornada arriscada")
 							break
+
 						elif villain == dados[3]:
 							print("O monstro dropou o seguinte item: {0}".format(data[4]["nome"]))
 							z = input("Deseja pegar o item dropado?(sim/nao): ")
@@ -119,6 +120,7 @@ def premios(data):#batalha mais premios
 							elif z == "nao":
 								print("Okay, continue sua jornada arriscada")
 							break
+
 						elif villain == dados[4]:
 							print("O monstro dropou o seguinte item: {0}".format(data[2]["nome"]))
 							z = input("Deseja pegar o item dropado?(sim/não): ")
@@ -130,6 +132,7 @@ def premios(data):#batalha mais premios
 							elif z == "nao":
 								print("Okay, continue sua jornada arriscada")
 							break
+
 						elif villain == dados[5]:
 							print("O monstro dropou o seguinte item: {0}".format(data[5]["nome"]))
 							z = input("Deseja pegar o item dropado?(sim/não): ")
@@ -159,4 +162,4 @@ def premios(data):#batalha mais premios
 			#	char['HP'] = char['HP']
 				resultado = "O monstro não faz nem cocegas"
 		return resultado
-print(premios(data))
+print(premios_combate(data))
