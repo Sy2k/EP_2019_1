@@ -82,6 +82,10 @@ def premios_combate(data):#batalha mais premios
     while char["HP"] > 0  or villain["HP"] > 0:
         print("*Voce possui HP suficiente para batalhar!*")
         premio = False
+        item_dado = ""
+        HitPoint_item = 0
+        Defesa_item = 0
+        resultado = ""
         if char["HitPoint"] > villain["defesa"]:
             villain["HP"] = villain["HP"] - (char["HitPoint"] - villain["defesa"])
             if villain["HP"] <=0:
@@ -259,15 +263,21 @@ def main():
     print(Fore.YELLOW + "item: {0}\nHitPoint: {1}\nDefense: {2}".format(dados_itens[2]['nome'],dados_itens[2]['plus HitPoint'],dados_itens[2]['Plus na defesa']))
     item_escolhido = input("Escolha entre os itens(digite o nome do item) {0}, {1} ou {2}:\n".format(dados_itens[0]["nome"],dados_itens[1]["nome"],dados_itens[2]["nome"]))
     if item_escolhido == dados_itens[0]['nome']:
-        inventario.append(dados_itens[0]['nome'])
+        inventario.append(dados_itens[0]['nome']) #adiciona o item no inventario
+        caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[0]['plus HitPoint'] #muda o hitpoint de acordo com o objeto
+        caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[0]['Plus na defesa'] #muda a defesa de acordo com o objeto
         print("Você escolheu o item: {0}".format(dados_itens[0]['nome'])) 
         print ("Item adicionado no inventario")
     elif item_escolhido == dados_itens[1]['nome']:
         inventario.append(dados_itens[1]['nome'])
+        caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[1]['plus HitPoint']
+        caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[1]['Plus na defesa']
         print("Você escolheu o item: {0}".format(dados_itens[1]['nome'])) 
         print ("Item adicionado no inventario")
     elif item_escolhido == dados_itens[2]['nome']:
         inventario.append(dados_itens[2]['nome'])
+        caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[2]['plus HitPoint']
+        caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[2]['Plus na defesa']
         print("Você escolheu o item: {0}".format(dados_itens[2]['nome'])) 
         print ("Item adicionado no inventario")
         print()
@@ -282,18 +292,19 @@ def main():
         print(Fore.RED + cenario_atual["descricao"])
         print()
         if len(opcoes) == 1:
-            resultado, item_obtido, HitPoint_add, Defesa_add = premios_combate(data)
-            print(resultado)
+            resultado_obtido, item_obtido, HitPoint_add, Defesa_add = premios_combate(data)
+            print(resultado_obtido)
             if not item_obtido in inventario:
                 inventario.append(item_obtido)
-                caracteristicas["HP"] = caracteristicas["HitPoint"] + HitPoint_add
-                caracteristicas["defesa"] = caracteristicas["defesa"] +  
+                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + HitPoint_add
+                caracteristicas["defesa"] = caracteristicas["defesa"] + Defesa_add
             time.sleep(2)
+            print(Fore.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
+            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
+            print()
             print(Fore.CYAN + "Voce tem as seguintes opções:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
-            print(Back.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
-            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
             escolha_digitada = input("")
@@ -322,11 +333,12 @@ def main():
             batalha_professor()
                                  
         else:
+            print(Fore.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
+            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
+            print()
             print(Fore.CYAN + "Voce tem as seguintes opções:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
-            print(Back.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
-            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
             escolha_digitada = input("")
@@ -351,6 +363,9 @@ def main():
                         item_achado = opcoes[escolha]
                         if not item_achado in inventario:
                             inventario.append(item_achado)
+                            #caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + 
+                            #caracteristicas["defesa"] = caracteristicas["defesa"] + 
+
 
     print("Voce morreu!")
 
