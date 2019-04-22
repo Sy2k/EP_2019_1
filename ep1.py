@@ -10,21 +10,24 @@ import json # a fim de importar os arquivos
 with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
     cenario = json.load(arquivo_c)
 
-with open('lista_itens_totais.json', 'r', encoding="utf8") as arquivo_i:
-    lista = json.load(arquivo_i)
+with open("char_caract.json", "r", encoding = "utf8") as arquivo_char:
+    dados_char = json.load(arquivo_char)
 
-with open("char_caract.json", "r", encoding = "utf8") as arqz:
-    dados_char = json.load(arqz)
+with open('Lista_itens_descricao.json', 'r', encoding="utf8") as arquivo_ld:
+    dados_i = json.load(arquivo_ld)
+
+def item_inicial():
+    lista = dados_i
+    return lista
 
 def carregar_cenarios(): 
     cenarios = cenario
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-def inventario(): #criando um inventario inicialmente de dois espacos
-    todos_itens = lista
+def inventario_funcao(): #criando um inventario inicialmente de dois espacos
     inventario_slots = []*2
-    return todos_itens, inventario_slots
+    return inventario_slots
 
 def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados Json lidos, os monstros
     monstros = [] #lista fazia da lista de monstros
@@ -34,9 +37,6 @@ def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados J
                 monstros.append(mons[var])
     rand = random.randint(1,len(monstros)-1)
     return monstros[rand]
-
-print (aparecer_monstros(dados))
-
 
 def main():
     init(autoreset=True)
@@ -55,11 +55,30 @@ def main():
     time.sleep(2)
 
     cenarios, nome_cenario_atual = carregar_cenarios()
-    todos_itens,inventario_slots = inventario()
+    inventario_slots = inventario_funcao()
+    dados_itens = item_inicial()
+    inventario = inventario_slots #o inventario sera igual a lista criada na funcao do inventariO
+    print(Back.CYAN + "Você poderá começar o jogo com um item!")
+    print("item: {0}\nHitPoint: {1}\nDefense: {2}".format(dados_itens[0]['nome'], dados_itens[0]['plus HitPoint'], dados_itens[0]['Plus na defesa']))
+    print("item: {0}\nHitPoint: {1}\nDefense: {2}".format(dados_itens[1]['nome'],dados_itens[1]['plus HitPoint'],dados_itens[1]['Plus na defesa']))
+    print("item: {0}\nHitPoint: {1}\nDefense: {2}".format(dados_itens[2]['nome'],dados_itens[2]['plus HitPoint'],dados_itens[2]['Plus na defesa']))
+    item_escolhido = input("Escolha entre os itens(digite o nome do item) {0}, {1} ou {2}:\n".format(dados_itens[0]["nome"],dados_itens[1]["nome"],dados_itens[2]["nome"]))
+    if item_escolhido == dados_itens[0]['nome']:
+        inventario.append(dados_itens[0]['nome'])
+        print("Você escolheu o item: {0}".format(dados_itens[0]['nome'])) 
+        print ("Item adicionado no inventario")
+    elif item_escolhido == dados_itens[1]['nome']:
+        inventario.append(dados_itens[1])
+        print("Você escolheu o item: {0}".format(dados_itens[1]['nome'])) 
+        print ("Item adicionado no inventario")
+    elif item_escolhido == dados_itens[2]['nome']:
+        inventario.append(dados_itens[2]['nome'])
+        print("Você escolheu o item: {0}".format(dados_itens[2]['nome'])) 
+        print ("Item adicionado no inventario")
+        print()
 
     game_over = False
     while not game_over: #enquanto a pessoa nao pereder
-        inventario_atual= inventario_slots #o inventario sera igual a lista criada na funcao do inventario
         cenario_atual = cenarios[nome_cenario_atual]
         print("----------------")
         print(Back.RED + cenario_atual["titulo"])
@@ -74,13 +93,13 @@ def main():
             print(Fore.CYAN + "Voce tem as seguintes opções:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
-            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario_atual))
+            print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
             escolha_digitada = input("")
             print()
 
-            while not escolha_digitada in opcoes and lista_t:
+            while not escolha_digitada in opcoes :
                     print(Back.CYAN + "Opcao inválida!!")
                     print("Digite como mostrado, por favor") # enquanto escrever errado ira mostrar essa mensagem
                     print()
@@ -97,8 +116,8 @@ def main():
                     nome_cenario_atual = escolha
                     if escolha == "item":
                         item_achado = opcoes[escolha]
-                        if not item_achado in inventario_atual:
-                            inventario_atual.append(item_achado)
+                        if not item_achado in inventario:
+                            inventario.append(item_achado)
 
     print("Voce morreu!")
 

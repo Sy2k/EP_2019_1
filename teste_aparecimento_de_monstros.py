@@ -134,5 +134,5 @@ def premios(data): #batalha mais premios
 		#	char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
 	return resultado
-	
+
 print (premios(data))
