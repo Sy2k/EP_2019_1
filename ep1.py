@@ -117,6 +117,8 @@ def premios_combate(data):#batalha mais premios
                 if premio == True: # dando o premio apos matar o monstro (item dropado)
                     if villain == dados[1]["nome"]: # cada tipo de monstro apos ser derrotado dropa um tipo de item
                         print (Back.MAGENTA + "Você se deparou com : {0}!!!".format(dados[1]["nome"]))
+                        time.sleep(2)
+                        print("")
                         print(Fore.RED + "Você matou o monstro!")
                         print("O monstro dropou o seguinte item: {0}".format(data[1]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
@@ -132,6 +134,8 @@ def premios_combate(data):#batalha mais premios
 
                     elif villain == dados[2]:
                         print (Back.MAGENTA + "Você se deparou com : {0}!!!".format(dados[2]["nome"]))
+                        time.sleep(2)
+                        print("")
                         print(Fore.RED + "Você matou o monstro!")
                         print("O monstro dropou o seguinte item: {0}".format(data[2]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
@@ -146,6 +150,8 @@ def premios_combate(data):#batalha mais premios
 
                     elif villain == dados[3]:
                         print (Back.MAGENTA + "Você se deparou com : {0}!!!".format(dados[3]["nome"]))
+                        time.sleep(2)
+                        print("")
                         print(Fore.RED + "Você matou o monstro!")
                         print("O monstro dropou o seguinte item: {0}".format(data[3]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
@@ -160,6 +166,8 @@ def premios_combate(data):#batalha mais premios
 
                     elif villain == dados[4]:
                         print (Back.MAGENTA + "Você se deparou com : {0}!!!".format(dados[4]["nome"]))
+                        time.sleep(2)
+                        print("")
                         print(Fore.RED + "Você matou o monstro!")
                         print("O monstro dropou o seguinte item: {0}".format(data[4]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
@@ -174,6 +182,8 @@ def premios_combate(data):#batalha mais premios
 
                     elif villain == dados[5]:
                         print (Back.MAGENTA + "Você se deparou com : {0}!!!".format(dados[5]["nome"]))
+                        time.sleep(2)
+                        print("")
                         print(Fore.RED + "Você matou o monstro!")
                         print("O monstro dropou o seguinte item: {0}".format(data[5]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/não): ")
@@ -207,6 +217,30 @@ def premios_combate(data):#batalha mais premios
 
     return resultado, item_dado
 
+def batalha_professor(dados):
+    professor_monstro = dados[0]
+    caracteristica = dados_char[0]
+    while caracteristica["HP"] > 0  or professor_monstro["HP"] > 0:
+        if caracteristica["HitPoint"] > professor_monstro["defesa"]:
+            professor_monstro["HP"] = professor_monstro["HP"] - (caracteristica["HitPoint"] - professor_monstro["defesa"])
+            if professor_monstro["HP"] <=0:
+                resultado = "Ganhou!! a EP foi adiada!"
+
+        elif caracteristica['HitPoint'] <= professor_monstro['defesa']:  # Quando  o poder de ataque do jogador for
+            professor_monstro['HP'] = professor_monstro['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
+            resultado = "Você nem faz cocegas no professor"
+
+        elif professor_monstro['HitPoint'] > caracteristica['defesa']:
+            caracteristica['HP'] = caracteristica['HP'] - (professor_monstro['HitPoint'] - caracteristica['defesa'])
+            if caracteristica['HP'] <=0:
+                #premio = False
+                resultado = "O jogador perdeu a batalha"
+
+
+    return resultado
+
+
+
 
 def main():
     init(autoreset=True)
@@ -222,20 +256,22 @@ def main():
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)")
     print()
-    time.sleep(1)
-    print("aviso: O mesmo monstro pode aparecer varias vezes, caso drope um item que você já obtenha no inventario, não será adicionado novamente")
-    time.sleep(1)
-    print("aviso: Para ficar mais divertido, procure não entrar novamente em locais que já houveram batalhas!")
-    time.sleep(1)
-    print("As batalhas irão depender da sua vida e seus atributos (aprimorados ao longo do jogo)")
+    time.sleep(2)
+    print(Fore.RED + "aviso: O mesmo monstro pode aparecer varias vezes, caso drope um item que você já obtenha no inventario, não será adicionado novamente")
+    time.sleep(2)
+    print(Fore.RED + "aviso: Para ficar mais divertido, procure não entrar novamente em locais que já houveram batalhas!")
+    time.sleep(2)
+    print(Fore.RED + "As batalhas irão depender da sua vida e seus atributos (aprimorados ao longo do jogo)")
+    print()
     time.sleep(2)
 
     cenarios, nome_cenario_atual = carregar_cenarios()
     inventario_slots = inventario_funcao()
     dados_itens = item_inicial()
     inventario = inventario_slots #o inventario sera igual a lista criada na funcao do inventario
+    caracteristicas = dados_char[0]
 
-    print(Back.CYAN + "Você poderá começar o jogo com um item!")
+    print("Você poderá começar o jogo com um item!")
     print("item: {0}\nHitPoint: {1}\nDefense: {2}".format(dados_itens[0]['nome'], dados_itens[0]['plus HitPoint'], dados_itens[0]['Plus na defesa']))
     print("item: {0}\nHitPoint: {1}\nDefense: {2}".format(dados_itens[1]['nome'],dados_itens[1]['plus HitPoint'],dados_itens[1]['Plus na defesa']))
     print("item: {0}\nHitPoint: {1}\nDefense: {2}".format(dados_itens[2]['nome'],dados_itens[2]['plus HitPoint'],dados_itens[2]['Plus na defesa']))
@@ -272,6 +308,7 @@ def main():
             print(Fore.CYAN + "Voce tem as seguintes opções:") 
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
+            print(Back.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
             print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
@@ -303,6 +340,7 @@ def main():
             for opcao,val in opcoes.items():
                 print(opcao,":",val)
             print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
+            print(Back.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
             escolha = ""
             print(Fore.CYAN + "O que deseja fazer?")
             escolha_digitada = input("")

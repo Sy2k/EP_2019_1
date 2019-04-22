@@ -7,6 +7,14 @@
                 "biblioteca": "Ir para a biblioteca",
                 "foyer":"va para o foyer"
             }
+        },  
+            "foyer":{
+                "titulo":"FOYER",
+                "descricao":"",
+                "opcoes":{
+                    "inicio":"voltar",
+                    "item":"colher"
+                }
         },
             "elevador":{
                 "titulo":"ELEVADOR",
