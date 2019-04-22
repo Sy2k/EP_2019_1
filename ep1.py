@@ -85,7 +85,6 @@ def premios_combate(data):#batalha mais premios
         item_dado = ""
         HitPoint_item = 0
         Defesa_item = 0
-        resultado = ""
         if char["HitPoint"] > villain["defesa"]:
             villain["HP"] = villain["HP"] - (char["HitPoint"] - villain["defesa"])
             if villain["HP"] <=0:
@@ -186,7 +185,7 @@ def premios_combate(data):#batalha mais premios
         elif char["HitPoint"] <= villain["defesa"]:  # Quando  o poder de ataque do jogador for
             #villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
             resultado = "Você nem faz cocegas no monstro"
-            print("Você perdeu")
+            print("Você perdeu! sem HitPoint suficiente!!")
             game_over = True
 
         elif villain["HitPoint"] > char["defesa"]:
@@ -221,7 +220,6 @@ def batalha_professor(dados):
             if caracteristica['HP'] <=0:
                 #premio = False
                 resultado = "O jogador perdeu a batalha"
-
 
     return resultado
 
@@ -286,6 +284,7 @@ def main():
     while not game_over: #enquanto a pessoa nao pereder
         cenario_atual = cenarios[nome_cenario_atual]
         opcoes = cenario_atual['opcoes']
+        print()
         print("----------------")
         print(Back.RED + cenario_atual["titulo"])
         print("----------------")
@@ -362,10 +361,30 @@ def main():
                     if escolha == "item":
                         item_achado = opcoes[escolha]
                         if not item_achado in inventario:
-                            inventario.append(item_achado)
-                            #caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + 
-                            #caracteristicas["defesa"] = caracteristicas["defesa"] + 
-
+                            if item_achado == "livro de literatura":
+                                inventario.append(item_achado)
+                                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[3]['plus HitPoint'] #muda o hitpoint de acordo com o objeto
+                                caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[3]['Plus na defesa'] #muda a defesa de acordo com o objeto
+                            elif item_achado == "colher":
+                                inventario.append(item_achado)
+                                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[8]['plus HitPoint']
+                                caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[8]['Plus na defesa'] 
+                            elif item_achado == "bolo ana maria":
+                                inventario.append(item_achado)
+                                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[11]['plus HitPoint']
+                                caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[11]['Plus na defesa'] 
+                            elif item_achado == "frigideira":
+                                inventario.append(item_achado)
+                                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[7]['plus HitPoint']
+                                caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[7]['Plus na defesa'] 
+                            elif item_achado == "chaves":
+                                inventario.append(item_achado)
+                                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[5]['plus HitPoint']
+                                caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[5]['Plus na defesa'] 
+                            elif item_achado == "balde de tinta":
+                                inventario.append(item_achado)
+                                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[6]['plus HitPoint']
+                                caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[6]['Plus na defesa'] 
 
     print("Voce morreu!")
 

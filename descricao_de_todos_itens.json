@@ -10,6 +10,8 @@
 {"nome":"colher","plus HitPoint":8,"Plus na defesa":5},
 {"nome":"faca","plus HitPoint":4,"Plus na defesa":2},
 {"nome":"agua fervente","plus HitPoint":10,"Plus na defesa":0},
-{"nome":"bolo","plus HitPoint":10,"Plus na defesa":0},
-{"nome":"casca de banana","plus HitPoint":10,"Plus na defesa":10}
+{"nome":"bolo ana maria","plus HitPoint":10,"Plus na defesa":0},
+{"nome":"casca de banana","plus HitPoint":10,"Plus na defesa":10},
+{"nome":"casaco","plus HitPoint":10,"Plus na defesa":20},
+{"nome":"café","plus HitPoint":10,"Plus na defesa":5}
 ]
