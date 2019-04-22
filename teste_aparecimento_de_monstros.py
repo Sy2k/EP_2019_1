@@ -57,6 +57,7 @@ def premios(data):#batalha mais premios
 				if villain["HP"] <=0:
 					premio = True
 					if premio == True: # dando o premio apos matar o monstro (item dropado)
+						print("Você matou o monstro")
 						if villain == dados[1]["nome"]: # cada tipo de monstro apos ser derrotado dropa um tipo de item
 							print("O monstro dropou o seguinte item: {0}".format(data[6]["nome"]))
 							z = input("Deseja pegar o item dropado?(sim/nao) ")
@@ -65,7 +66,7 @@ def premios(data):#batalha mais premios
 								z = input("Deseja pegar o item dropado? (sim/nao): ")
 							if z == "sim": 
 								#inv.append(data[6])
-								print("Item adicionado no inventario")#será adicionado no inventario e devera mudar os dados do HitPoint, defesa e HP
+								print("Item adicionado no inventario") #será adicionado no inventario e devera mudar os dados do HitPoint, defesa e HP
 							elif z == "nao":
 								print("Okay, continue sua jornada arriscada")
 
@@ -131,4 +132,4 @@ def premios(data):#batalha mais premios
 			#	char['HP'] = char['HP']
 				resultado = "O monstro não faz nem cocegas"
 			return resultado
-premios(data)
+print(premios(data))
