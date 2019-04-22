@@ -11,7 +11,7 @@ import random
 with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
     cenario = json.load(arquivo_c)
 
-with open("char_caract.json", "r", encoding = "utf8") as arquivo_char:
+with open("caracteristica_jogador.json", "r", encoding = "utf8") as arquivo_char:
     dados_char = json.load(arquivo_char)
 
 with open('descricao_de_todos_itens.json', 'r', encoding="utf8") as arquivo_ld:
