@@ -14,7 +14,7 @@ with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
 with open("char_caract.json", "r", encoding = "utf8") as arquivo_char:
     dados_char = json.load(arquivo_char)
 
-with open('Lista_itens_descricao.json', 'r', encoding="utf8") as arquivo_ld:
+with open('descricao_de_todos_itens.json', 'r', encoding="utf8") as arquivo_ld:
     dados_i = json.load(arquivo_ld)
 
 with open("monstros_descricao.json","r", encoding = "utf8") as arquivo:
