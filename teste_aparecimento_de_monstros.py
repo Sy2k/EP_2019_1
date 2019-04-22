@@ -11,26 +11,25 @@ with open("char_caract.json", "r", encoding = "utf8") as arqz:
 with open("premios.json","r",encoding ="utf8") as arquivoL:
     data = json.load(arquivoL)
 
-with open("Lista_itens_descricao.json","r",encoding = "utf8") as inf:
+with open("Lista_itens_descricao.json", "r", encoding = "utf8") as inf:
 	info = json.load(inf)
 
-
 def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados Json lidos, os monstros
-	lista_Mons = [] #lista vazia da lista de monstros
-	for e in dados:
-		for x in e.keys():
-			if x == "nome":
-				lista_Mons.append(e[x])
-	key = random.randint(1,len(lista_Mons)-1)
-	#print(lista_Mons[key])
-	return lista_Mons[key]
+	monstros = [] #lista fazia da lista de monstros
+	for mons in dados:
+		for var in mons.keys():
+			if var == "nome":
+				monstros.append(mons[var])
+	rand = random.randint(1,len(monstros)-1)
+	#print(monstros[key])
+	return monstros[rand]
 
 print (aparecer_monstros(dados))
 
 def batalha(dados, dados_char):
-	dados2 = aparecer_monstros(dados)
-	villain= dados2
-	char = dados_char[1]
+	nome_monstro = aparecer_monstros(dados)
+	villain = nome_monstro
+	char = dados_char[0]
 	while char['HP'] > 0  or villain['HP'] > 0:
 		if char['HitPoint'] > villain['defensa']:
 			villain['HP'] = villain['HP'] - (char['HitPoint'] - villain['defesa'])
@@ -54,13 +53,13 @@ def batalha(dados, dados_char):
 
 #list_new_data = []# tentando criar um bagy para ir guardando as alteracoes dos HitPoint
 def premios(data): #batalha mais premios 
-	dados2 = aparecer_monstros(dados)
-	villain= dados2
-	char = dados_char[1]
+	nome_monstro = aparecer_monstros(dados)
+	villain= nome_monstro
+	char = dados_char[0]
 	#list_new_data.append(data[1]["nome"], data[1]["HitPoint"], data[1]["HP"], data[1]["HP"])
 	while char['HP'] > 0  or villain['HP'] > 0:
 		premio = False
-		if char['HitPoint'] > villain['defensa']:
+		if char['HitPoint'] > villain['defesa']:
 			villain['HP'] = villain['HP'] - (char['HitPoint'] - villain['defesa'])
 			if villain['HP'] <=0:
 				premio = True
@@ -131,8 +130,9 @@ def premios(data): #batalha mais premios
 				#premio = False
 				resultado = "O jogador perdeu a batalha"
 
-
 		elif villain['HitPoint'] < char['defesa']:
 		#	char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
 	return resultado
+	
+print (premios(data))

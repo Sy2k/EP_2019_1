@@ -4,7 +4,7 @@
 #Ellen - dicionario
 import time # a fim de usar time.sleep(z), onde z eh demonimado como um numero
 import colorama
-from colorama import Fore, Back, Style, init #ira "colorir" 
+from colorama import Fore, Back, Style, init # "colorir" 
 import json # a fim de importar os arquivos
 
 with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
@@ -12,11 +12,9 @@ with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
 
 with open('lista_itens_totais.json', 'r', encoding="utf8") as arquivo_i:
     lista = json.load(arquivo_i)
-with open('teletransporte.json', 'r', encoding="utf8") as arquivo_tele:
-    lista_tele = json.load(arquivo_tele)
 
-with open('teletransporte.json', 'r', encoding='utf8') as arquivo_t:
-    lista_tele = json.load(arquivo_t)
+with open("char_caract.json", "r", encoding = "utf8") as arqz:
+    dados_char = json.load(arqz)
 
 def carregar_cenarios(): 
     cenarios = cenario
@@ -28,26 +26,17 @@ def inventario(): #criando um inventario inicialmente de dois espacos
     inventario_slots = []*2
     return todos_itens, inventario_slots
 
-def teletransporte(): #feature teletransporte
-    lista_t = lista_tele
-#    {
-#    "foyer" : { 
-#        "titulo":"SALA SECRETA",
-#        "descricao":"voce encontrou um local secreto",
-#        "opcoes":{ "item" : "livro de literatura"
-#                }
-#
-#    },
-#    "teletransporte":{ 
-#        "titulo":"TELETRANSPORTE",
-#        "descricao":"voce irá ser telestransportado",
-#        "opcoes":{"":""
-#                }
-#
-#    }
-#}
-    nome_cenario_teletransporte = "teletransporte"
-    return lista_t,nome_cenario_teletransporte
+def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados Json lidos, os monstros
+    monstros = [] #lista fazia da lista de monstros
+    for mons in dados:
+        for var in mons.keys():
+            if var == "nome":
+                monstros.append(mons[var])
+    rand = random.randint(1,len(monstros)-1)
+    return monstros[rand]
+
+print (aparecer_monstros(dados))
+
 
 def main():
     init(autoreset=True)
@@ -67,19 +56,11 @@ def main():
 
     cenarios, nome_cenario_atual = carregar_cenarios()
     todos_itens,inventario_slots = inventario()
-    lista_t, nome_cenario_teletransporte = teletransporte()
 
     game_over = False
     while not game_over: #enquanto a pessoa nao pereder
         inventario_atual= inventario_slots #o inventario sera igual a lista criada na funcao do inventario
         cenario_atual = cenarios[nome_cenario_atual]
-        cenario_teletransporte = lista_t[nome_cenario_teletransporte]
-        #if cenario_teletransporte == "biblioteca":
-        #    cenario_teletransporte = lista_t[1]["Nome do local"]
-        #elif cenario_teletransporte == "aquario":
-        #    cenario_teletransporte = lista_t[2]["Nome do local"]
-        #elif cenario_transporte == "foyer":
-        #    cenar
         print("----------------")
         print(Back.RED + cenario_atual["titulo"])
         print("----------------")
@@ -118,12 +99,7 @@ def main():
                         item_achado = opcoes[escolha]
                         if not item_achado in inventario_atual:
                             inventario_atual.append(item_achado)
-            elif escolha_digitada in lista_t:
-                escolha = escolha_digitada
-                if escolha == "teletransporte":
-                    teletransporte_escolha = input("para onde deseja se teletransportar? ")
-                    cenario_teletransporte = teletransporte_escolha
-                    cenario_atual = cenario_teletransporte
+
     print("Voce morreu!")
 
 
