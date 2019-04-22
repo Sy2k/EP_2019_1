@@ -1,2 +1,4 @@
-[{"nome":"Char","HitPoint":200,"HP":180,"defesa":45}
+[{"nome":"Char1","HitPoint":200,"HP":180,"defesa":45},
+{"nome":"Char2","HitPoint":150,"HP":180,"defesa":45},
+{"nome":"Char3","HitPoint":100,"HP":180,"defesa":45}
 ]

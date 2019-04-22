@@ -21,13 +21,13 @@ def demons_app(dados): #ira rodar de forma aleatoria a partir dos dados Json lid
 			if var == "nome":
 				monstros.append(mons[var])
 	rand = random.randint(1,len(monstros)-1)
-	print(monstros[rand])
+	#print(monstros[rand])
 	return monstros[rand]
-
+print(demons_app(dados))
 #list_new_data = []# tentando criar um bagy para ir guardando as alteracoes dos HitPoint
 def premios(data): #batalha mais premios 
-	dados2 = demons_app(dados)
-	villain= dados2
+	monstro = demons_app(dados)
+	villain= monstro
 	char = dados_char[1]
 	#list_new_data.append(data[1]["nome"], data[1]["HitPoint"], data[1]["HP"], data[1]["HP"])
 	while char['HP'] > 0  or villain['HP'] > 0:
@@ -109,3 +109,4 @@ def premios(data): #batalha mais premios
 		#	char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
 		return resultado
+#print(premios(data))
