@@ -28,15 +28,7 @@ def inventario(): #criando um inventario inicialmente de dois espacos
     todos_itens = lista
     inventario_slots = []*2
     return todos_itens, inventario_slots
-    z = input("Qual item deseja pegar")
-    for i in inv:
-        x = i.split()  # Separa.
-        h=" ".join(z)  # Junta tudo de novo com um espaco.
-    if not h in inv:
-        inv.append(h)  # Adiciona elementos que nao estao presentes na lista
-    return todos_itens, inventario_slots, inv
-
-
+    
 def teletransporte(): #feature teletransporte
     lista_t = lista_tele
 #    {
