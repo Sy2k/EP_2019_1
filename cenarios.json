@@ -95,24 +95,7 @@
             "conversar com os amigos":{
                 "titulo" : "CILADA",
                 "descricao" : "um de seus amigos se mostrou um monstro",
-                "opcoes" : {
-                    "lutar":"batalhar contra o mosntro",
-                    "fugir":"deixe seus amigos serem devorados"
-                }
-        },
-            "lutar":{
-                "titulo":"BATALHA",
-                "descricao":"derrote o mosntro",
-                "opcoes":{
-                    "inicio":"voltar"
-                }
-
-        },
-            "fugir":{
-                "titulo": "COVARDE",
-                "descricao" : "merece morrer",
                 "opcoes" : {}
-
         },  
             "refeitorio":{
                 "titulo": "TERRA DA COMILANCIA",

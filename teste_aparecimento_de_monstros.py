@@ -14,16 +14,43 @@ with open("premios.json","r",encoding ="utf8") as arquivoL:
 with open("Lista_itens_descricao.json", "r", encoding = "utf8") as inf:
 	info = json.load(inf)
 
-def demons_app(dados): #ira rodar de forma aleatoria a partir dos dados Json lidos, os monstros
+def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados Json lidos, os monstros
 	monstros = [] #lista fazia da lista de monstros
 	for mons in dados:
 		for var in mons.keys():
 			if var == "nome":
 				monstros.append(mons[var])
 	rand = random.randint(1,len(monstros)-1)
-	#print(monstros[rand])
+	#print(monstros[key])
 	return monstros[rand]
-print(demons_app(dados))
+
+print (aparecer_monstros(dados))
+
+def batalha(dados, dados_char):
+	nome_monstro = aparecer_monstros(dados)
+	villain = nome_monstro
+	char = dados_char[0]
+	while char['HP'] > 0  or villain['HP'] > 0:
+		if char['HitPoint'] > villain['defensa']:
+			villain['HP'] = villain['HP'] - (char['HitPoint'] - villain['defesa'])
+			if villain['HP'] <=0:
+				resultado = "O jogador ganhou a batalha"
+
+		elif char['HitPoint'] <= villain['defesa']:  # Quando  o poder de ataque do jogador for
+			villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
+			resultado = "Você nem faz cocegas no monstro"
+
+		elif villain['HitPoint'] > char['defesa']:
+			char['HP'] = char['HP'] - (villain['HitPoint'] - char['defesa'])
+			if char['HP'] <=0:
+				#premio = False
+				resultado = "O jogador perdeu a batalha"
+
+		elif villain['HitPoint'] < char['defesa']:
+			char['HP'] = char['HP']
+			resultado = "O monstro não faz nem cocegas"
+	return resultado
+
 #list_new_data = []# tentando criar um bagy para ir guardando as alteracoes dos HitPoint
 def premios(data):#batalha mais premios
 	game_over = False 
