@@ -17,7 +17,7 @@ with open("char_caract.json", "r", encoding = "utf8") as arquivo_char:
 with open('Lista_itens_descricao.json', 'r', encoding="utf8") as arquivo_ld:
     dados_i = json.load(arquivo_ld)
 
-with open("HP_HitPoint_Defense(teste).json","r", encoding = "utf8") as arquivo:
+with open("monstros_descricao.json","r", encoding = "utf8") as arquivo:
     dados = json.load(arquivo)
 
 with open("premios.json","r",encoding ="utf8") as arquivoL:

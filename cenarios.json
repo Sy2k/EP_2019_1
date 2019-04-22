@@ -21,7 +21,7 @@
                 "descricao":"escolha um andar",
                 "opcoes":{
                     "refeitorio":"ir para o refeitorio",
-                    "andar 4":"vá para o andar de alunos de engenharia"
+                    "4 andar":"vá para o andar de alunos de engenharia"
                 }
         },
             "4 andar":{
