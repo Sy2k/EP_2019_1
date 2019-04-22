@@ -14,8 +14,9 @@ with open("premios.json","r",encoding ="utf8") as arquivoL:
 with open("Lista_itens_descricao.json","r",encoding = "utf8") as inf:
 	info = json.load(inf)
 
+
 def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados Json lidos, os monstros
-	lista_Mons = [] #lista fazia da lista de monstros
+	lista_Mons = [] #lista vazia da lista de monstros
 	for e in dados:
 		for x in e.keys():
 			if x == "nome":
@@ -25,7 +26,7 @@ def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados J
 	return lista_Mons[key]
 
 print (aparecer_monstros(dados))
-"""
+
 def batalha(dados, dados_char):
 	dados2 = aparecer_monstros(dados)
 	villain= dados2
@@ -34,25 +35,23 @@ def batalha(dados, dados_char):
 		if char['HitPoint'] > villain['defensa']:
 			villain['HP'] = villain['HP'] - (char['HitPoint'] - villain['defesa'])
 			if villain['HP'] <=0:
-				return "O jogador ganhou a batalha"
+				resultado = "O jogador ganhou a batalha"
 
 		elif char['HitPoint'] <= villain['defesa']:  # Quando  o poder de ataque do jogador for
-		    villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
+			villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
 			resultado = "Você nem faz cocegas no monstro"
-			return resultado 
 
 		elif villain['HitPoint'] > char['defesa']:
 			char['HP'] = char['HP'] - (villain['HitPoint'] - char['defesa'])
 			if char['HP'] <=0:
 				#premio = False
 				resultado = "O jogador perdeu a batalha"
-				return resultado
 
 		elif villain['HitPoint'] < char['defesa']:
 			char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
-		return resultado
-"""
+	return resultado
+
 #list_new_data = []# tentando criar um bagy para ir guardando as alteracoes dos HitPoint
 def premios(data): #batalha mais premios 
 	dados2 = aparecer_monstros(dados)
@@ -125,17 +124,15 @@ def premios(data): #batalha mais premios
 		elif char['HitPoint'] <= villain['defesa']:  # Quando  o poder de ataque do jogador for
 		    #villain['HP'] = villain['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
 			resultado = "Você nem faz cocegas no monstro"
-			return resultado
 
 		elif villain['HitPoint'] > char['defesa']:
 			char['HP'] = char['HP'] - (villain['HitPoint'] - char['defesa'])
 			if char['HP'] <=0:
 				#premio = False
 				resultado = "O jogador perdeu a batalha"
-				return resultado
+
 
 		elif villain['HitPoint'] < char['defesa']:
 		#	char['HP'] = char['HP']
 			resultado = "O monstro não faz nem cocegas"
-		return resultado
-print(premios(data))
+	return resultado
