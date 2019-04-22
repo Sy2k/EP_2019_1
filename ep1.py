@@ -12,6 +12,7 @@ with open('cenarios.json', 'r', encoding="utf8") as arquivo_c:
 
 with open('lista_itens_totais.json', 'r', encoding="utf8") as arquivo_i:
     lista = json.load(arquivo_i)
+    
 with open('teletransporte.json', 'r', encoding="utf8") as arquivo_tele:
     lista_tele = json.load(arquivo_tele)
 
@@ -28,13 +29,13 @@ def inventario(): #criando um inventario inicialmente de dois espacos
     inventario_slots = []*2
     return todos_itens, inventario_slots
     z = input("Qual item deseja pegar")
-    while z in opcao_item:
-        for i in inv:
-            x = i.split()  # Separa.
-            h="".join(z)  # Junta tudo de novo com um espaco.
-        if not h in inv:
-            inv.append(h)  # Adiciona elementos que nao estao presentes na lista
+    for i in inv:
+        x = i.split()  # Separa.
+        h=" ".join(z)  # Junta tudo de novo com um espaco.
+    if not h in inv:
+        inv.append(h)  # Adiciona elementos que nao estao presentes na lista
     return todos_itens, inventario_slots, inv
+
 
 def teletransporte(): #feature teletransporte
     lista_t = lista_tele
