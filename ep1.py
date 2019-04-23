@@ -56,7 +56,7 @@ def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados J
     #print(monstros[key])
     return monstros[rand]
 
-def premios_combate(dados, data):#batalha mais premios
+def premios_combate(dados, data,game_over):#batalha mais premios
     lista_pergunta = ["sim","nao"]
     monstro = aparecer_monstros(dados) #randomizar o monstro
 
@@ -196,25 +196,28 @@ def premios_combate(dados, data):#batalha mais premios
         break 
     return resultado, item_dado
 
-def batalha_professor():
+def batalha_professor(game_over):
+    global resultado
     professor_monstro = dados[0]
     caracteristica = dados_char[0]
     while caracteristica["HP"] > 0  or professor_monstro["HP"] > 0:
-
         if caracteristica["HitPoint"] > professor_monstro["defesa"]:
+            print("Seu HitPoint é maior do que a defesa do professor!")
             professor_monstro["HP"] = professor_monstro["HP"] - (caracteristica["HitPoint"] - professor_monstro["defesa"])
-
             if professor_monstro["HP"] <=0:
                 resultado = "Ganhou!! a EP foi adiada!"
+        
 
-        elif caracteristica['HitPoint'] <= professor_monstro['defesa']:  # Quando  o poder de ataque do jogador for menor igual do que a defesa do oponente, a HP do Oponente nao se altera
-            resultado = "Você nem faz cocegas no professor, tente novamente"
-
+        elif caracteristica['HitPoint'] <= professor_monstro['defesa']:
+            resultado = "Sem HitPoint para ganhar!"
+            game_over = True
+            
+            
         elif professor_monstro['HitPoint'] > caracteristica['defesa']:
             caracteristica['HP'] = caracteristica['HP'] - (professor_monstro['HitPoint'] - caracteristica['defesa'])
-            if caracteristica['HP'] <=0:
-                resultado = "O jogador perdeu a batalha"
-
+            resultado = "HitPoint muito alto para sua defesa!"
+            game_over = True
+        break
     return resultado
 
 
@@ -285,14 +288,15 @@ def main():
         print(Fore.RED + cenario_atual["descricao"])
         print()
         if len(opcoes) == 0:
-            batalha_professor()
+            resultado_professor = batalha_professor(game_over)
+            print(resultado_professor)
         elif len(opcoes) == 1:
-            resultado, item_obtido = premios_combate(dados,data)
+            resultado, item_obtido = premios_combate(dados,data,game_over)
             print(resultado)
             if not item_obtido in inventario:
                 inventario.append(item_obtido)
-                #caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + HitPoint_add
-                #caracteristicas["defesa"] = caracteristicas["defesa"] + Defesa_add
+                caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + 10
+                caracteristicas["defesa"] = caracteristicas["defesa"] + 10
             time.sleep(2)
             print(Fore.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
             print(Fore.MAGENTA + "SEU INVENTARIO: {0}".format(inventario))
