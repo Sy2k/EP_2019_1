@@ -124,10 +124,11 @@
                 "titulo":"LUGAR DA PRIVACIDADE",
                 "descricao":"voce entrou na sala de estudo em grupo",
                 "opcoes":{"biblioteca": "voltar para biblioteca",
-                    "conversar com os amigos": "passe tempo de qualidade com eles"
+                    "amigos": "passe tempo de qualidade com eles",
+                    "item":"casaco"
                                     }
         },
-            "conversar com os amigos":{
+            "amigos":{
                 "titulo" : "CILADA",
                 "descricao" : "mosntro!!",
                 "opcoes" : { "biblioteca":"voltar" }
@@ -160,7 +161,7 @@
                 "descricao":"sobe além do 5º andar",
                 "opcoes":{
                     "refeitorio":"ir para refeitorio",
-                    "6 andar":"ir para 7º andar",
+                    "6 andar":"ir para 6º andar",
                     "8 andar":"ir para 8º andar"
                 }
         },
