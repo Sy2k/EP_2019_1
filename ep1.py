@@ -297,7 +297,7 @@ def main():
         if len(opcoes) == 0:
             batalha_professor()
         elif len(opcoes) == 1:
-            resultado_obtido, item_obtido, HitPoint_add, Defesa_add = premios_combate(dados)
+            resultado_obtido, item_obtido, HitPoint_add, Defesa_add = premios_combate(dados,data)
             print(resultado_obtido)
             if not item_obtido in inventario:
                 inventario.append(item_obtido)
