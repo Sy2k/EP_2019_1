@@ -204,7 +204,7 @@ def premios_combate(dados, data):#batalha mais premios
             resultado = "O monstro não faz nem cocegas"
 
         break 
-    return resultado_obtido, item_dado, HitPoint_item, Defesa_item
+    return resultado, item_dado, HitPoint_item, Defesa_item
 
 def batalha_professor():
     professor_monstro = dados[0]
@@ -214,17 +214,33 @@ def batalha_professor():
         if caracteristica["HitPoint"] > professor_monstro["defesa"]:
             professor_monstro["HP"] = professor_monstro["HP"] - (caracteristica["HitPoint"] - professor_monstro["defesa"])
 
-            if professor_monstro["HP"] <=0:
+            if professor_monstro["HP"] < 150:
+                print("A vida do professor é menor que 150")
+            elif professor_monstro["HP"] < 100:
+                print("Você tirou metade de sua vida")
+            elif professor_monstro["HP"] < 75:
+                print("O HP do professor é menor que 75")
+            elif professor_monstro["HP"] < 50:
+                print("O HP do professor é menor que a 50")
+            elif [professor]["HP"]<25:
+                print("O HP do professor é menor a 25")
+            elif professor_monstro["HP"] <=0:
                 resultado = "Ganhou!! a EP foi adiada!"
-
+            break
         elif caracteristica['HitPoint'] <= professor_monstro['defesa']:  # Quando  o poder de ataque do jogador for menor igual do que a defesa do oponente, a HP do Oponente nao se altera
-            resultado = "Você nem faz cocegas no professor, tente novamente"
-
+            resultado = "Você nem faz cocegas no professor"
+            
         elif professor_monstro['HitPoint'] > caracteristica['defesa']:
             caracteristica['HP'] = caracteristica['HP'] - (professor_monstro['HitPoint'] - caracteristica['defesa'])
-            if caracteristica['HP'] <=0:
+            if caracteristica["HP"] < 75:
+                print("Seu HP é menos que 75")
+            elif caracteristica["HP"] < 50:
+                print("Seu HP é esta menos que a metade")
+            elif caracteristica["HP"] < 25:
+                print("Seu HP caiu para menor que 25")
+            elif caracteristica['HP'] <=0:
                 resultado = "O jogador perdeu a batalha"
-
+            break
     return resultado
 
 
