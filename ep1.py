@@ -206,18 +206,18 @@ def batalha_professor(game_over):
             professor_monstro["HP"] = professor_monstro["HP"] - (caracteristica["HitPoint"] - professor_monstro["defesa"])
             if professor_monstro["HP"] <=0:
                 resultado = "Ganhou!! a EP foi adiada!"
+            break
         
-
         elif caracteristica['HitPoint'] <= professor_monstro['defesa']:
             resultado = "Sem HitPoint para ganhar!"
             game_over = True
-            
+            break
             
         elif professor_monstro['HitPoint'] > caracteristica['defesa']:
             caracteristica['HP'] = caracteristica['HP'] - (professor_monstro['HitPoint'] - caracteristica['defesa'])
             resultado = "HitPoint muito alto para sua defesa!"
             game_over = True
-        break
+            break
     return resultado
 
 
@@ -290,6 +290,7 @@ def main():
         if len(opcoes) == 0:
             resultado_professor = batalha_professor(game_over)
             print(resultado_professor)
+            game_over = True
         elif len(opcoes) == 1:
             resultado, item_obtido = premios_combate(dados,data,game_over)
             print(resultado)
@@ -384,7 +385,7 @@ def main():
                                 caracteristicas["HitPoint"] = caracteristicas["HitPoint"] + dados_itens[6]['plus HitPoint']
                                 caracteristicas["defesa"] = caracteristicas["defesa"] + dados_itens[6]['Plus na defesa'] 
 
-    print("Voce morreu!")
+    print("Jogo acabou!")
 
 
 # Programa principal.
