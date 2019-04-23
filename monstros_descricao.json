@@ -1,5 +1,5 @@
 [
-{"nome":"Professor DesSoft", "HitPoint":70, "HP":200, "defesa":100},
+{"nome":"Professor DesSoft", "HitPoint":70, "HP":180, "defesa":80},
 {"nome":"Raposa Selvagem","HitPoint":50,"HP":100,"defesa":45},
 {"nome":"Amigo Monstro","HitPoint":40,"HP":100,"defesa":40},
 {"nome":"Cozinheiro","HitPoint":40,"HP":100,"defesa":35},

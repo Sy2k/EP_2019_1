@@ -84,7 +84,7 @@
                     "biblioteca":"voltar para biblioteca",
                     "facebook": "entrar na rede social",
                     "blackboard": "entrar na area de aluno",
-                    "item":"chave"
+                    "item":"chaves"
                 }
         },  
             "item":{
@@ -108,7 +108,7 @@
                 "titulo" : "MENSAGEM",
                 "descricao" : "messenger",
                 "opcoes" : {
-                    "dica":"tenha mais de x HP para adiar a EP",
+                    "dica":"tenha mais de 80 HitPoint para adiar a EP",
                     "computadores":"voltar"
                 }
         },
@@ -150,7 +150,7 @@
         },
             "fala":{
                 "titulo":"O PROFESSOR TEM ALGO PARA TE FALAR",
-                "descricao":"voce precisará de um livro!",
+                "descricao":"achando o livro fica mais fácil de ganhar o jogo!",
                 "opcoes":{
                     "refeitorio":"voltar",
                     "elevador 2":"troque de andar utilizando outro elevador"}
@@ -169,7 +169,8 @@
                 "descricao":"sexto andar do prédio",
                 "opcoes":{
                     "elevador 2": "voltar para o elevador",
-                    "sala professor":"sala onde o professor de DesSoft está"
+                    "sala professor":"sala onde o professor de DesSoft está",
+                    "item":"balde de tinta"
                 }
         },
             "8 andar":{
@@ -177,7 +178,7 @@
                 "descricao":"oitavo andar do prédio",
                 "opcoes":{
                     "elevador 2":"voltar para o elevador",
-                    "item":"balde de tinta"
+                    "item":"livro de literatura"
                 }
         },
             "banheiro":{

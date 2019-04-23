@@ -56,7 +56,8 @@ def aparecer_monstros(dados): #ira rodar de forma aleatoria a partir dos dados J
     #print(monstros[key])
     return monstros[rand]
 
-def premios_combate(data):#batalha mais premios
+def premios_combate():#batalha mais premios
+    premio = data
     lista_pergunta = ["sim","nao"]
     monstro = aparecer_monstros(dados)
     if monstro == "Professor DesSoft":
@@ -96,15 +97,15 @@ def premios_combate(data):#batalha mais premios
                         time.sleep(2)
                         print("")
                         print(Fore.RED + "Você matou o monstro!")
-                        print("O monstro dropou o seguinte item: {0}".format(data[1]["nome"]))
+                        print("O monstro dropou o seguinte item: {0}".format(premio[1]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
                         while not z in lista_pergunta: #verificacao da escolha que o player pode fazer
                             print("Invalido") # caso não seja igual a sim ou nao deve se repetir entao repetira dentro desse while
                             z = input("Deseja pegar o item dropado?(sim/nao):")
                         if z == "sim":
-                            item_dado = data[1]['nome']
-                            HitPoint_item = data[1]['plus HitPoint']
-                            Defesa_item = data[1]['Plus na defesa']
+                            item_dado = premio[1]['nome']
+                            HitPoint_item = premio[1]['plus HitPoint']
+                            Defesa_item = premio[1]['Plus na defesa']
                             print("Item adicionado no inventario") #será adicionado no inventario e devera mudar os dados do HitPoint, defesa e HP
                         elif z == "nao":
                             print("Okay, continue sua jornada arriscada")
@@ -115,15 +116,15 @@ def premios_combate(data):#batalha mais premios
                         time.sleep(2)
                         print("")
                         print(Fore.RED + "Você matou o monstro!")
-                        print("O monstro dropou o seguinte item: {0}".format(data[2]["nome"]))
+                        print("O monstro dropou o seguinte item: {0}".format(premio[2]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
                         while not z in lista_pergunta:
                             print("Invalido, por favor escreva como mostrado")
                             z = input("Deseja pegar o item dropado?(sim/nao):")
                         if z == "sim":
-                            item_dado = data[2]['nome']
-                            HitPoint_item = data[2]['plus HitPoint']
-                            Defesa_item = data[2]['Plus na defesa']
+                            item_dado = premio[2]['nome']
+                            HitPoint_item = premio[2]['plus HitPoint']
+                            Defesa_item = premio[2]['Plus na defesa']
                         elif z == "nao":
                             print("Okay, continue sua jornada arriscada")
                         break
@@ -133,15 +134,15 @@ def premios_combate(data):#batalha mais premios
                         time.sleep(2)
                         print("")
                         print(Fore.RED + "Você matou o monstro!")
-                        print("O monstro dropou o seguinte item: {0}".format(data[3]["nome"]))
+                        print("O monstro dropou o seguinte item: {0}".format(premio[3]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
                         while not z in lista_pergunta:
                             print("Invalido, por favor escreva como mostrado")
                             z = input("Deseja pegar o item dropado?(para sim/nao):")
                         if z == "sim":
-                            item_dado = data[3]['nome']
-                            HitPoint_item = data[3]['plus HitPoint']
-                            Defesa_item = data[3]['Plus na defesa']
+                            item_dado = premio[3]['nome']
+                            HitPoint_item = premio[3]['plus HitPoint']
+                            Defesa_item = premio[3]['Plus na defesa']
                         elif z == "nao":
                             print("Okay, continue sua jornada arriscada")
                         break
@@ -151,15 +152,15 @@ def premios_combate(data):#batalha mais premios
                         time.sleep(2)
                         print("")
                         print(Fore.RED + "Você matou o monstro!")
-                        print("O monstro dropou o seguinte item: {0}".format(data[4]["nome"]))
+                        print("O monstro dropou o seguinte item: {0}".format(premio[4]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/nao):")
                         while not z in lista_pergunta:
                             print("Invalido, por favor escreva como mostrado")
                             z = int(input("Deseja pegar o item dropado?(para sim digite 1/para nao digite 2):"))
                         if z == "sim":
-                            item_dado = data[4]['nome']
-                            HitPoint_item = data[4]['plus HitPoint']
-                            Defesa_item = data[4]['Plus na defesa']
+                            item_dado = premio[4]['nome']
+                            HitPoint_item = premio[4]['plus HitPoint']
+                            Defesa_item = premio[4]['Plus na defesa']
                         elif z == "nao":
                             print("Okay, continue sua jornada arriscada")
                         break
@@ -169,15 +170,15 @@ def premios_combate(data):#batalha mais premios
                         time.sleep(2)
                         print("")
                         print(Fore.RED + "Você matou o monstro!")
-                        print("O monstro dropou o seguinte item: {0}".format(data[5]["nome"]))
+                        print("O monstro dropou o seguinte item: {0}".format(premio[5]["nome"]))
                         z = input("Deseja pegar o item dropado?(sim/não): ")
                         while not z in lista_pergunta:
                             print("Invalido, por favor escreva como mostrado")
                             z = input("Deseja pegar o item dropado?(sim/não): ")
                         if z == "sim":
-                            item_dado = data[5]['nome']
-                            HitPoint_item = data[5]['plus HitPoint']
-                            Defesa_item = data[5]['Plus na defesa']
+                            item_dado = premio[5]['nome']
+                            HitPoint_item = premio[5]['plus HitPoint']
+                            Defesa_item = premio[5]['Plus na defesa']
                         elif z == "nao":
                             print("Okay, continue sua jornada arriscada")   
                         break
@@ -211,14 +212,12 @@ def batalha_professor(dados):
             if professor_monstro["HP"] <=0:
                 resultado = "Ganhou!! a EP foi adiada!"
 
-        elif caracteristica['HitPoint'] <= professor_monstro['defesa']:  # Quando  o poder de ataque do jogador for
-            professor_monstro['HP'] = professor_monstro['HP']   # menor igual do que a defesa do oponente, a HP do Oponente nao se altera
-            resultado = "Você nem faz cocegas no professor"
+        elif caracteristica['HitPoint'] <= professor_monstro['defesa']:  # Quando  o poder de ataque do jogador for menor igual do que a defesa do oponente, a HP do Oponente nao se altera
+            resultado = "Você nem faz cocegas no professor, tente novamente"
 
         elif professor_monstro['HitPoint'] > caracteristica['defesa']:
             caracteristica['HP'] = caracteristica['HP'] - (professor_monstro['HitPoint'] - caracteristica['defesa'])
             if caracteristica['HP'] <=0:
-                #premio = False
                 resultado = "O jogador perdeu a batalha"
 
     return resultado
@@ -290,7 +289,9 @@ def main():
         print("----------------")
         print(Fore.RED + cenario_atual["descricao"])
         print()
-        if len(opcoes) == 1:
+        if len(opcoes) == 0:
+            batalha_professor()
+        elif len(opcoes) == 1:
             resultado_obtido, item_obtido, HitPoint_add, Defesa_add = premios_combate(data)
             print(resultado_obtido)
             if not item_obtido in inventario:
@@ -328,8 +329,6 @@ def main():
                         item_achado = opcoes[escolha]
                         if not item_achado in inventario:
                             inventario.append(item_achado)
-        elif len(opcoes) == 0:
-            batalha_professor()
                                  
         else:
             print(Fore.MAGENTA + "HP:{0} HitPoint:{1} Defesa total:{2}".format(caracteristicas["HP"],caracteristicas["HitPoint"],caracteristicas["defesa"]))
